@@ -28,3 +28,23 @@
       - ReagentId: DrGibb
         Quantity: 5
 
+- type: entity
+  parent: PlushieMoth
+  id: PlushieMothAstor
+  name: battle tested hop moth plushie
+  description: A fluffy plushie resembling a pissed off looking moth in a worn HoP uniform.
+  components:
+  - type: Sprite
+    sprite: _Gearstation/Objects/Fun/Plushies/astor.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Gearstation/Objects/Fun/Plushies/astor.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.06"
+  - type: UseDelay
+    delay: 1.0
+  - type: MeleeWeapon
+    attackRate: 1
+
