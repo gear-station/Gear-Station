@@ -10,6 +10,11 @@
       time: 5h # Starlight start. You should learn how to drive the shuttle, or at least sell stuff at ATS.
     - !type:OverallPlaytimeRequirement
       time: 8h
+    # Gear-start - Population requirement
+    - !type:PopulationRequirement
+      requiredPopulation: 10
+      inverted: true
+    # Gear-end - Population requirement
   icon: "JobIconSalvageSpecialist" # Starlight - New distinct icon, Starlight end
   startingGear: SalvageSpecialistGear
   supervisors: job-supervisors-itg #starlight
