@@ -93,8 +93,6 @@ public sealed partial class HumanoidProfileEditor
         UpdateGenderControls();
         Markings.SetSex(newSex);
         ReloadPreview();
-        UpdateVoicesControls();
-        UpdateSiliconVoicesControls();
     }
 
     private void SetGender(Gender newGender)

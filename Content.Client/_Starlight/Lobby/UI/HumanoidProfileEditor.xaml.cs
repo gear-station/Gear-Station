@@ -387,7 +387,6 @@ namespace Content.Client._Starlight.Lobby.UI
             SpeciesInfoButton.OnPressed += OnSpeciesInfoButtonPressed;
 
             UpdateSpeciesGuidebookIcon();
-            InitializeVoiceSelectors();
             SetupTabs();
             _recordsTab = CreateRecordEditorTab();
             SetupInfoEditors();
@@ -445,8 +444,6 @@ namespace Content.Client._Starlight.Lobby.UI
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
-            UpdateVoicesControls();
-            UpdateSiliconVoicesControls();
             UpdateCybernetics();
             UpdateSpeciesLoadout();
             UpdateTraitsSelection();

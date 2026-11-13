@@ -11,6 +11,5 @@ public sealed class RadioSpokeEvent : EntityEventArgs
     public SpeechMessage Message { get; set; } = null!;
 
     public LanguagePrototype Language = null!;
-    public bool SuppressTTS { get; set; } = false;
     public EntityUid[] Receivers { get; set; } = null!;
 }

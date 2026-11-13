@@ -6,7 +6,6 @@ using Content.Shared._Starlight.Language;
 using Content.Shared._Starlight.StationRadio;
 using Content.Shared._Starlight.StationRadio.Components;
 using Content.Shared._Starlight.StationRadio.Systems;
-using Content.Shared._Starlight.TextToSpeech;
 using Content.Shared.Chat;
 using Content.Shared.Examine;
 using Content.Shared.Popups;
@@ -263,8 +262,6 @@ public sealed partial class BroadcastRecorderSystem : SharedBroadcastRecorderSys
             {
                 Time = _timing.CurTime - comp.Start,
                 Kind = BroadcastTapeEventKind.Speech,
-                Name = nameEv.VoiceName,
-                Voice = CompOrNull<TextToSpeechComponent>(args.Source)?.VoicePrototypeId,
                 Text = args.Message.Text,
                 Language = args.Language.ID,
             });
@@ -397,13 +394,6 @@ public sealed partial class BroadcastRecorderSystem : SharedBroadcastRecorderSys
         if (string.IsNullOrEmpty(ev.Text))
             return;
 
-        var voice = EnsureComp<VoiceOverrideComponent>(ent);
-        voice.NameOverride = ev.Name;
-        voice.Enabled = true;
-
-        var tts = EnsureComp<TextToSpeechComponent>(ent);
-        tts.VoicePrototypeId = ev.Voice;
-        Dirty(ent, tts);
 
         LanguagePrototype? language = null;
         if (ev.Language != null)

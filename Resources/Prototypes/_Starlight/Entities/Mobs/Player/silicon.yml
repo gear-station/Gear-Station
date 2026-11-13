@@ -3,7 +3,6 @@
   id: Drone
   parent: BaseMob
   components:
-  - type: TextToSpeech
   - type: MovementAlwaysTouching
   - type: NoSlip
   - type: Pacified
