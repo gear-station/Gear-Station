@@ -12,6 +12,11 @@
     - !type:RoleTimeRequirement
       role: JobParamedic
       time: 18000 # 5 hours
+    # Gear-start - Population requirement
+    - !type:PopulationRequirement
+      requiredPopulation: 10
+      inverted: true
+    # Gear-end - Population requirement
   icon: "JobIconSalvageMedic"
   startingGear: SalvageMedicGear
   supervisors: job-supervisors-itg
