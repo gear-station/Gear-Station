@@ -74,6 +74,7 @@ public sealed partial class RoundEndSystem
 
     private void StartCallVote()
     {
+        if (_gameTiming.CurTime.Hours >= 3) {RequestRoundEnd(null, null, false, "round-end-system-shuttle-auto-called-announcement","round-end-system-shuttle-sender-announcement",true);} // Gear - no recall over 3 hours
         var options = new VoteOptions()
         {
             DisplayVotes = false,
