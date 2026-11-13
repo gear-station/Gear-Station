@@ -48,3 +48,33 @@
   - type: MeleeWeapon
     attackRate: 1
 
+- type: entity
+  parent: PlushieMoth
+  id: PlushieMothFirewalker
+  name: atmosian moth plushie
+  description: A fluffy plushie resembling a certain atmosian. Smells of frezon.
+  components:
+  - type: Sprite
+    sprite: _Gearstation/Objects/Fun/Plushies/firewalker.rsi
+  - type: Clothing
+    sprite: _Gearstation/Objects/Fun/Plushies/firewalker.rsi
+  - type: GasAnalyzer
+  - type: ActivatableUI
+    inHandsOnly: true
+    singleUser: true
+    requireActiveHand: false
+    key: enum.GasAnalyzerUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.GasAnalyzerUiKey.Key:
+        type: GasAnalyzerBoundUserInterface
+  - type: EmitSoundOnLand
+    sound: &PlushieMothSqueakFirewalker
+      path: /Audio/Voice/Moth/moth_squeak.ogg
+  - type: EmitSoundOnCollide
+    sound: &PlushieMothScreamFirewalker
+      path: /Audio/Voice/Moth/moth_scream.ogg
+  - type: MeleeWeapon
+    soundHit: *PlushieMothScreamFirewalker
+  - type: Edible
+    useSound: *PlushieMothScreamFirewalker
