@@ -75,7 +75,6 @@
   - type: BroadcastRecorder
   - type: TelecomExempt # Plays recorded speech straight onto the radio show channel, like the server's microphone.
   - type: Speech
-  - type: TextToSpeech
   - type: DeviceLinkSource
     ports:
     - BroadcastRecorderPort

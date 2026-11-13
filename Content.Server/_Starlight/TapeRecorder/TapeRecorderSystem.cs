@@ -4,7 +4,6 @@ using Content.Server.Speech.Components;
 using Content.Shared.Chat;
 using Content.Shared.Paper;
 using Content.Shared.Speech;
-using Content.Shared._Starlight.TextToSpeech;
 using Content.Shared._Starlight.TapeRecorder;
 using Content.Shared._Starlight.TapeRecorder.Components;
 using Content.Shared._Starlight.TapeRecorder.Events;
@@ -52,7 +51,6 @@ public sealed partial class TapeRecorderSystem : SharedTapeRecorderSystem
     {
         var voice = EnsureComp<VoiceOverrideComponent>(ent);
         var speech = EnsureComp<SpeechComponent>(ent);
-        var tts = EnsureComp<TextToSpeechComponent>(ent);
 
         foreach (var message in tape.RecordedData)
         {
@@ -65,12 +63,6 @@ public sealed partial class TapeRecorderSystem : SharedTapeRecorderSystem
             var verb = message.Verb ?? SharedChatSystem.DefaultSpeechVerb;
             speech.SpeechVerb = _proto.Index<SpeechVerbPrototype>(verb);
 
-            // Set the TTS voice if one was recorded for this message
-            if (!string.IsNullOrEmpty(message.VoiceId))
-            {
-                tts.VoicePrototypeId = message.VoiceId;
-                Dirty(ent, tts);
-            }
 
             //Play the message
             _chat.TrySendInGameICMessage(ent, message.Message, InGameICChatType.Speak, false);
@@ -99,17 +91,11 @@ public sealed partial class TapeRecorderSystem : SharedTapeRecorderSystem
         var nameEv = new TransformSpeakerNameEvent(args.Source, Name(args.Source));
         RaiseLocalEvent(args.Source, nameEv);
 
-        //Get the speaker's TTS voice if they have one
-        string? voiceId = null;
-        if (TryComp<TextToSpeechComponent>(args.Source, out var ttsComp))
-        {
-            voiceId = ttsComp.VoicePrototypeId;
-        }
 
         //Add a new entry to the tape
         var verb = _chat.GetSpeechVerb(args.Source, args.Message);
         var name = nameEv.VoiceName;
-        cassette.Comp.Buffer.Add(new TapeCassetteRecordedMessage(cassette.Comp.CurrentPosition, name, verb, args.Message, voiceId));
+        cassette.Comp.Buffer.Add(new TapeCassetteRecordedMessage(cassette.Comp.CurrentPosition, name, verb, args.Message, null));
     }
 
     private void OnPrintMessage(Entity<TapeRecorderComponent> ent, ref PrintTapeRecorderMessage args)

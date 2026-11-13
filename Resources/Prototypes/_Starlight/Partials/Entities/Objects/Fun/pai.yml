@@ -3,7 +3,6 @@
   components:
   # Languages
   - type: LanguageSpeaker
-  - type: TextToSpeech
   - type: ToggleableGhostRole
     mindRoles:
     - !Remove MindRoleGhostRoleFamiliar
@@ -38,7 +37,6 @@
 - type: !PartialOnly entity
   id: SyndicatePersonalAI
   components:
-  - type: TextToSpeech
   - type: ToggleableGhostRole
     roleRules: ghost-role-information-syndicate-pai-rules
     mindRoles:
@@ -59,7 +57,6 @@
 - type: !PartialOnly entity
   id: PotatoAI
   components:
-  - type: TextToSpeech
   - type: ToggleableGhostRole
     mindRoles:
     - !Remove MindRoleGhostRoleFamiliar

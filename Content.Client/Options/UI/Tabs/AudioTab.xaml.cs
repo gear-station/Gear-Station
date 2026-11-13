@@ -71,25 +71,7 @@ public sealed partial class AudioTab : Control
             SliderMusicRadio,
             scale: ContentAudioSystem.AmbientMusicMultiplier);
 
-        Control.AddOptionPercentSlider(
-            StarlightCCVars.TTSVolume,
-            SliderTts,
-            scale: ContentAudioSystem.TtsMultiplier);
 
-        Control.AddOptionPercentSlider(
-            StarlightCCVars.TTSRadioVolume,
-            SliderTtsRadio,
-            scale: ContentAudioSystem.TtsMultiplier);
-
-        Control.AddOptionPercentSlider(
-            StarlightCCVars.TTSAnnounceVolume,
-            SliderTtsAnnounce,
-            scale: ContentAudioSystem.TtsMultiplier);
-
-        Control.AddOptionPercentSlider(
-            StarlightCCVars.TTSChimeVolume,
-            SliderTtsChime,
-            scale: ContentAudioSystem.TtsMultiplier);
 
         // Per-category volumes are gain multipliers defaulting to 1, so the slider starts at 50% with room to boost.
         AddCategorySlider(StarlightCCVars.StationHumVolume, SliderStationHum);
@@ -111,8 +93,6 @@ public sealed partial class AudioTab : Control
         Control.AddOptionCheckBox(CCVars.AdminSoundsEnabled, AdminSoundsCheckBox);
         Control.AddOptionCheckBox(CCVars.BwoinkSoundEnabled, BwoinkSoundCheckBox);
         Control.AddOptionCheckBox(StarlightCCVars.RadioChimeMuted, RadioChimeMuteCheckBox);
-        Control.AddOptionCheckBox(StarlightCCVars.TTSClientEnabled, TtsClientCheckBox);
-        Control.AddOptionCheckBox(StarlightCCVars.TTSRadioQueueEnabled, TtsRadioQueueCheckBox);
 
         Control.Initialize();
     }

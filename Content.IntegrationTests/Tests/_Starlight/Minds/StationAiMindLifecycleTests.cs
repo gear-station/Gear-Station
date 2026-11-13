@@ -7,7 +7,6 @@ using Content.Server.Mind;
 using Content.Server.Pinpointer;
 using Content.Server.Power.Components;
 using Content.Server.Silicons.StationAi;
-using Content.Server._Starlight.TextToSpeech;
 using Content.Server._Starlight.Station.Systems;
 using Content.Server.Station.Systems;
 using Content.Shared.Actions;
@@ -926,11 +925,11 @@ public sealed partial class MindTests
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<AnnouncementSpokeEvent>(OnAnnouncement);
+            //SubscribeLocalEvent<AnnouncementSpokeEvent>(OnAnnouncement);
         }
 
         public void Clear() => LastMessage = string.Empty;
 
-        private void OnAnnouncement(AnnouncementSpokeEvent args) => LastMessage = args.Message.Text;
+        //private void OnAnnouncement(AnnouncementSpokeEvent args) => LastMessage = args.Message.Text;
     }
 }

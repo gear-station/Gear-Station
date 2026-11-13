@@ -55,18 +55,6 @@
                     </BoxContainer>
                 </PanelContainer>
 
-                <Label Text="{Loc 'ui-options-tts-label'}" StyleClasses="LabelKeyText" Margin="0 0 0 4" />
-                <PanelContainer StyleClasses="InsetPanel" Margin="0 0 0 12">
-                    <BoxContainer Name="TtsPage" Orientation="Vertical" Margin="10 6" SeparationOverride="4">
-                        <CheckBox Name="TtsClientCheckBox" Text="{Loc 'ui-options-tts-enabled'}" />
-                        <CheckBox Name="TtsRadioQueueCheckBox" Text="{Loc 'ui-options-tts-radio-queue-enabled'}"
-                                  Margin="0 0 0 8" />
-                        <sui:OptionSlider Name="SliderTts" Title="{Loc 'ui-options-tts-volume'}" />
-                        <sui:OptionSlider Name="SliderTtsRadio" Title="{Loc 'ui-options-tts-radio-volume'}" />
-                        <sui:OptionSlider Name="SliderTtsAnnounce" Title="{Loc 'ui-options-tts-announce-volume'}"/>
-                        <sui:OptionSlider Name="SliderTtsChime" Title="{Loc 'ui-options-tts-chime-volume'}" />
-                    </BoxContainer>
-                </PanelContainer>
 
                 <Label Text="{Loc 'ui-options-other-label'}" StyleClasses="LabelKeyText" Margin="0 0 0 4" />
                 <PanelContainer StyleClasses="InsetPanel">

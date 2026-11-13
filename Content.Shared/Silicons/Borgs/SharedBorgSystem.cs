@@ -36,7 +36,6 @@ using Content.Shared.Radio.Components;
 using Content.Shared._Starlight.Silicons.Borgs;
 using Content.Shared.Actions.Components;
 using Content.Shared.NameModifier.EntitySystems;
-using Content.Shared._Starlight.TextToSpeech;
 using Content.Shared.Tag;
 
 namespace Content.Shared.Silicons.Borgs;
@@ -275,14 +274,6 @@ public abstract partial class SharedBorgSystem : EntitySystem
         // Unpredicted because the event is raised on the server.
         _popup.PopupEntity(Loc.GetString("borg-mind-added", ("name", Identity.Name(chassis.Owner, EntityManager))), chassis.Owner);
 
-        //Starlight start, load the borg's tts voice
-        if (TryComp<TextToSpeechComponent>(chassis, out var ttscomp))
-        {
-            ttscomp.VoicePrototypeId = args.Mind.Comp.SiliconVoice;
-            Dirty(chassis, ttscomp);
-        }
-        //Starlight end
-
         TryActivate(chassis);
 
         _appearance.SetData(chassis.Owner, BorgVisuals.HasPlayer, true);
@@ -484,17 +475,6 @@ public abstract partial class SharedBorgSystem : EntitySystem
             return;
 
         var borg = container.Owner;
-
-        //load borg voice
-        if (TryComp<TextToSpeechComponent>(uid, out var ttscomp))
-		{
-            if (mind != null)
-            {
-                ttscomp.VoicePrototypeId = mind.SiliconVoice;
-                Dirty(uid, ttscomp);
-            }
-		}
-        //Starlight End
 
         _mind.TransferTo(mindId, borg, mind: mind);
     }

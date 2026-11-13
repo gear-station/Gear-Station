@@ -1,6 +1,5 @@
 using System.Collections.Concurrent;
 using System.Linq;
-using Content.Server._Starlight.TextToSpeech;
 using Content.Server.Chat.Systems;
 using Content.Server.Construction;
 using Content.Server.Movement.Systems;
@@ -107,7 +106,6 @@ public sealed partial class RemoteControlConsoleSystem : EntitySystem
     [Dependency] private PopupSystem _popup = default!;
     [Dependency] private PullController _pullController = default!;
     [Dependency] private PvsOverrideSystem _pvsOverride = default!;
-    [Dependency] private TTSSystem _tts = default!;
 
     [Dependency] private SharedStorageSystem _storage = default!;
 
@@ -2085,7 +2083,6 @@ public sealed partial class RemoteControlConsoleSystem : EntitySystem
                 || !spokenAt.Add(remoteEntity))
                 continue;
 
-            _tts.PlaySpeechAt(remoteEntity, ev);
         }
     }
 
