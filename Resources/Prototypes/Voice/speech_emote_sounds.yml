@@ -308,11 +308,11 @@
       path: /Audio/Effects/Gasp/vox_DeathGasp.ogg
     # Gear-start - vox emotes
     Hisses:
-      path: /Audio/_Gearstation/Voice/Vox/vox_hiss.ogg
+      path: /Audio/_Moffstation/Voice/Vox/vox_hiss.ogg
     Caw:
-      path: /Audio/_Gearstation/Voice/Vox/vox_caw.ogg
+      path: /Audio/_Moffstation/Voice/Vox/vox_caw.ogg
     Crow:
-      path: /Audio/_Gearstation/Voice/Vox/vox_cawf.ogg
+      path: /Audio/_Moffstation/Voice/Vox/vox_cawf.ogg
     # Gear-start - vox emotes
   params:
     variation: 0.125

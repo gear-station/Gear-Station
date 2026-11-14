@@ -2,7 +2,7 @@
   id: Caw
   name: chat-emote-name-caw
   category: Vocal
-  icon: _Gearstation/Interface/Emotes/caw.png
+  icon: _Moffstation/Interface/Emotes/caw.png
   available: false
   whitelist:
     components:
