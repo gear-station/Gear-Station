@@ -6,12 +6,14 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobScientist
-    time: 10h # Starlight
+    time: 5h # Starlight
   - !type:RoleTimeRequirement
     role: JobRoboticist
     time: 5h # Starlight
   - !type:DepartmentTimeRequirement
     department: Science
+    time: 10h # Starlight
+  - !type:OverallPlaytimeRequirement
     time: 20h # Starlight
   - !type:TraitsRequirement # Starlight
     traits:

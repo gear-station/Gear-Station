@@ -6,13 +6,15 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
-      time: 7h # Starlight
+      time: 5h # Starlight
     - !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 7h # Starlight
+      time: 5h # Starlight
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 20h # Starlight
+      time: 10h # Starlight
+    - !type:OverallPlaytimeRequirement
+      time: 20h # Zirco
     - !type:TraitsRequirement # Starlight
       traits:
         - Iterator

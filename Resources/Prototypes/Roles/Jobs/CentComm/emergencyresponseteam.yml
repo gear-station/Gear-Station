@@ -4,6 +4,24 @@
   name: job-name-ertleader
   description: job-description-ertleader
   playTimeTracker: JobERTLeader
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 30h
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 10h
+  - !type:DepartmentTimeRequirement
+    department: Science
+    time: 10h
+  - !type:DepartmentTimeRequirement
+    department: Engineering
+    time: 10h
+  - !type:DepartmentTimeRequirement
+    department: Medical
+    time: 10h
+  - !type:DepartmentTimeRequirement
+    department: Civilian
+    time: 10h
   setPreference: false
   startingGear: ERTLeaderGearEVA
   icon: "JobIconERTLeader"
@@ -102,6 +120,10 @@
   name: job-name-ertchaplain
   description: job-description-ertchaplain
   playTimeTracker: JobERTChaplain
+  requirements:
+  - !type:RoleTimeRequirement
+    role: Chaplain
+    time: 5h
   setPreference: false
   startingGear: ERTChaplainGear
   icon: "JobIconERTChaplain"
@@ -178,6 +200,10 @@
   name: job-name-ertengineer
   description: job-description-ertengineer
   playTimeTracker: JobERTEngineer
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Engineering
+    time: 5h
   setPreference: false
   startingGear: ERTEngineerGearEVA
   icon: "JobIconERTEngineer"
@@ -271,6 +297,10 @@
   name: job-name-ertsecurity
   description: job-description-ertsecurity
   playTimeTracker: JobERTSecurity
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 5h
   setPreference: false
   startingGear: ERTSecurityGearEVA
   icon: "JobIconERTSecurity"
@@ -453,6 +483,10 @@
   name: job-name-ertmedic
   description: job-description-ertmedic
   playTimeTracker: JobERTMedical
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Medical
+    time: 5h
   setPreference: false
   startingGear: ERTMedicalGearEVA
   icon: "JobIconERTMedic"
@@ -552,6 +586,10 @@
   name: job-name-ertjanitor
   description: job-description-ertjanitor
   playTimeTracker: JobERTJanitor
+  requirements:
+  - !type:RoleTimeRequirement
+    role: Janitor
+    time: 5h
   setPreference: false
   startingGear: ERTJanitorGearEVA
   icon: "JobIconERTJanitor"

@@ -6,16 +6,12 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 10h # Starlight
-    - !type:RoleTimeRequirement
-      role: JobDetective
-      time: 5h # knowing how to use the tools is important # Starlight
-    - !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 15h # Starlight
+      time: 5h # Starlight
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 50h # Starlight - Literally the most pressured role in the game, you need extensive knowledge of your department
+      time: 10h
+    - !type:OverallPlaytimeRequirement
+      time: 20h
     - !type:TraitsRequirement # Starlight
       traits:
         - Iterator

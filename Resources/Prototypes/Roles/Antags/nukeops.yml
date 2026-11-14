@@ -7,7 +7,7 @@
   roleLoadout: [ AntagNukeops ] # Starlight
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 48h # Starlight start
+    time: 20h # Starlight start
   - !type:RoleTimeRequirement
     role: JobSecurityOfficer # Bare minimum 1 hour non cadet. Teaches you how to use normal guns.
     time: 1h

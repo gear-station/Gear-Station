@@ -15,7 +15,7 @@
   roleLoadout: [ AntagWizard ] # Starlight
   requirements: # I hate time locked roles but this should be enough time for someone to be acclimated
   - !type:OverallPlaytimeRequirement
-    time: 48h # Starlight. You've got the potential to mass grief.
+    time: 20h # Starlight. You've got the potential to mass grief.
   - !type:DepartmentTimeRequirement
     department: Security
     time: 6h # Starlight

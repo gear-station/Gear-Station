@@ -4,16 +4,16 @@
   description: job-description-lawyer-sl # Starlight, new desc.
   playTimeTracker: JobLawyer
   requirements:
-    - !type:RoleTimeRequirement # Starlight start
-      role: JobIAA # You have to actually know the law, this role is really easy to mess up if you don't.
-      time: 3h # Starlight end
+    - !type:DepartmentTimeRequirement
+      department: Security # You have to actually know the law, this role is really easy to mess up if you don't.
+      time: 5h
   startingGear: LawyerGear
   icon: "JobIconLawyer"
   supervisors: job-supervisors-hop
   access:
   - Service
   - Lawyer
-#  - Brig # Starlight, no longer associated with Security.
+  - Brig # Starlight, no longer associated with Security.
   - Maintenance
 
 - type: startingGear

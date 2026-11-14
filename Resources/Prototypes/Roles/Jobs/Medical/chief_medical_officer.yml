@@ -8,12 +8,14 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobChemist
-      time: 7h # Starlight
+      time: 5h # Starlight
     - !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 7h # Starlight
+      time: 5h # Starlight
     - !type:DepartmentTimeRequirement
       department: Medical
+      time: 10h # Starlight
+    - !type:OverallPlaytimeRequirement
       time: 20h # Starlight
     - !type:TraitsRequirement # Starlight
       traits:

@@ -5,17 +5,13 @@
   playTimeTracker: JobCaptain
   requirements:
     - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 20h # Starlight
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 20h # Starlight
+      department: Command
+      time: 10h # Zirco
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 20h # Starlight
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 25h # Starlight
+      time: 10h # Zirco
+    - !type:OverallPlaytimeRequirement
+      time: 50h # Starlight
     - !type:TraitsRequirement # Starlight
       traits:
         - Iterator
