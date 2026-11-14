@@ -307,7 +307,7 @@
     DefaultDeathgasp:
       path: /Audio/Effects/Gasp/vox_DeathGasp.ogg
     # Gear-start - vox emotes
-    Hiss:
+    Hisses:
       path: /Audio/_Gearstation/Voice/Vox/vox_hiss.ogg
     Caw:
       path: /Audio/_Gearstation/Voice/Vox/vox_caw.ogg

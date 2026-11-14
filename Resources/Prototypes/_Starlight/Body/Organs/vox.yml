@@ -155,7 +155,7 @@
   description: "A fleshy muscle mostly used for screaming."
   components:
   - type: OrganTongue
-    allowedEmotes: ['Click', 'Chitter', 'Caw', 'Hiss', 'Crow'] # Gear - vox emotes
+    allowedEmotes: ['Click', 'Chitter', 'Caw', 'Hisses', 'Crow'] # Gear - vox emotes
     sounds:
       Male: UnisexVox
       Female: UnisexVox

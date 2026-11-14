@@ -1,22 +1,4 @@
 - type: emote
-  id: Hiss
-  name: chat-emote-name-hiss
-  category: Vocal
-  available: false
-  icon: Interface/Emotes/vocal.png
-  whitelist:
-    components:
-    - Vocal
-  blacklist:
-    components:
-    - BorgChassis
-  chatMessages: ["chat-emote-msg-hiss"]
-  chatTriggers:
-  - hiss
-  - hisses
-  - hissing
-
-- type: emote
   id: Caw
   name: chat-emote-name-caw
   category: Vocal
