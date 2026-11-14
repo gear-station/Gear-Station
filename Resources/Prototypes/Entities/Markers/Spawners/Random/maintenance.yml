@@ -274,10 +274,12 @@
         children:
         - id: NitrogenTankFilled
         - id: DoubleEmergencyNitrogenTankFilled
-      - !type:GroupSelector #Starlight
-        children:
-        - id: CoolingUnit
-        - id: EmergencyCoolingUnit
+      # Gear-start - disable IPC
+      #- !type:GroupSelector #Starlight
+      #  children:
+      #  - id: CoolingUnit
+      #  - id: EmergencyCoolingUnit
+      # Gear-end - disable IPC
       - id: EmergencyFunnyOxygenTankFilled
         weight: 0.5
       - !type:GroupSelector

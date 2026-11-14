@@ -51,7 +51,7 @@
     children:
     - id: ClothingMaskBreath
     - id: ClothingOuterSuitEmergency
-    - id: EmergencyCoolingUnit # Starlight
+    #- id: EmergencyCoolingUnit # Starlight Gear - disable IPC
     - id: ClothingOuterSuitEmergency #Starlight, 2 per locker for higher pop
       prob: 0.5 #Starlight
     - !type:GroupSelector
