@@ -91,32 +91,33 @@
         Piercing: -0.05
         Slash: -0.05
         Heat: -0.07
-  - type: Destructible
-    thresholds:
-      - trigger: !type:DamageTypeTrigger
-          damageType: Blunt
-          damage: 400
-        behaviors:
-        - !type:GibBehavior {}
-        - !type:SpawnEntitiesBehavior
-          spawn:
-            ShadekinShadow:
-              min: 1
-              max: 1
-      - trigger: !type:DamageTypeTrigger
-          damageType: Heat
-          damage: 1500
-        behaviors:
-        - !type:SpawnEntitiesBehavior
-          spawnInContainer: true
-          spawn:
-            Ash:
-              min: 1
-              max: 1
-            ShadekinShadow:
-              min: 1
-              max: 1
-        - !type:BurnBodyBehavior {}
+  # Gear - remove gibbing
+  #- type: Destructible
+  #  thresholds:
+  #    - trigger: !type:DamageTypeTrigger
+  #        damageType: Blunt
+  #        damage: 400
+  #      behaviors:
+  #      - !type:GibBehavior {}
+  #      - !type:SpawnEntitiesBehavior
+  #        spawn:
+  #          ShadekinShadow:
+  #            min: 1
+  #            max: 1
+  #    - trigger: !type:DamageTypeTrigger
+  #        damageType: Heat
+  #        damage: 1500
+  #      behaviors:
+  #      - !type:SpawnEntitiesBehavior
+  #        spawnInContainer: true
+  #        spawn:
+  #          Ash:
+  #            min: 1
+  #            max: 1
+  #          ShadekinShadow:
+  #            min: 1
+  #            max: 1
+  #      - !type:BurnBodyBehavior {}
 
   # BaseMobSpeciesOrganic // Because we dont want respirator to be used.
   - type: Barotrauma

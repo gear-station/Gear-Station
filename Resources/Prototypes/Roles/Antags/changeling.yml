@@ -8,7 +8,7 @@
   guides: [ Changelings ]
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 24h
+    time: 20h
   - !type:SpeciesRequirement
     species:
     - IPC

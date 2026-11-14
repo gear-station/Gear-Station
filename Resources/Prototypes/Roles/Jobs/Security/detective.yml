@@ -4,9 +4,9 @@
   description: job-description-detective
   playTimeTracker: JobDetective
   requirements:
-  - !type:RoleTimeRequirement
-    role: JobSecurityOfficer
-    time: 10h # Starlight
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 2.5h # Starlight
   displayWeight: 3 # Starlight
   startingGear: DetectiveGear
   icon: "JobIconDetective"

@@ -332,6 +332,7 @@
 # Antag loadouts (Only has species stuff right now)
 - type: roleLoadout
   id: AntagNukeops
+  canCustomizeName: true # Gear - custom antag names
   groups:
   - NeocyteCybernetics
   - SurvivalSyndicate
@@ -340,6 +341,7 @@
 
 - type: roleLoadout
   id: AntagNukeopsCommander
+  canCustomizeName: true # Gear - custom antag names
   groups:
   - NeocyteCybernetics
   - SurvivalSyndicate
@@ -348,6 +350,7 @@
 
 - type: roleLoadout
   id: AntagNukeopsMedic
+  canCustomizeName: true # Gear - custom antag names
   groups:
   - NeocyteCybernetics
   - SurvivalSyndicate
@@ -356,12 +359,14 @@
 
 - type: roleLoadout
   id: AntagSpaceNinja
+  canCustomizeName: true # Gear - custom antag names
   groups:
   - NeocyteCybernetics
   - GroupEVATank
 
 - type: roleLoadout
   id: AntagWizard
+  canCustomizeName: true # Gear - custom antag names
   groups:
   - NeocyteCybernetics
   - SurvivalExtended
@@ -370,6 +375,7 @@
 
 - type: roleLoadout
   id: AntagWizardDuelist
+  canCustomizeName: true # Gear - custom antag names
   groups:
   - NeocyteCybernetics
   - SurvivalExtended

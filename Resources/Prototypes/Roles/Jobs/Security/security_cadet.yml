@@ -5,11 +5,7 @@
   playTimeTracker: JobSecurityCadet
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 16h # Starlight
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 20h # Starlight
-      inverted: true # stop playing intern if you're good at security!
+      time: 5h
   weight: -1
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"

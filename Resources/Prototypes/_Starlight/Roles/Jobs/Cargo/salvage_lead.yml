@@ -13,6 +13,11 @@
     - !type:RoleTimeRequirement
       role: JobSalvageSpecialist
       time: 18000 # 5 hours
+    # Gear-start - Population requirement
+    - !type:PopulationRequirement
+      requiredPopulation: 10
+      inverted: true
+    # Gear-end - Population requirement
   icon: "JobIconSalvageLead"
   startingGear: SalvageLeadGear
   displayWeight: 5

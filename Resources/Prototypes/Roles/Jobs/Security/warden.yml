@@ -6,13 +6,10 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 15h # Starlight
-    - !type:RoleTimeRequirement # Starlight
-      role: JobDutyOfficer # Starlight
-      time: 5h # Starlight
+      time: 2.5h # Starlight
     - !type:RoleTimeRequirement
       role: JobDetective # Starlight
-      time: 1h # Starlight
+      time: 2.5h # Starlight
   weight: 5
   startingGear: WardenGear
   icon: "JobIconWarden"

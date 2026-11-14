@@ -7,7 +7,7 @@
   guides: [ Traitors ]
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 12h # Starlight, mostly just to ensure you know basic controls.
+    time: 5h # Starlight, mostly just to ensure you know basic controls.
   playTimeTracker: AntagTraitor # Starlight
 
 - type: antagSpecifier
