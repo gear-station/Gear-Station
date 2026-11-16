@@ -4,10 +4,12 @@ using System.Threading;
 using Content.Server.GameTicking;
 using Content.Server.Voting;
 using Content.Server.Voting.Managers;
+using Content.Shared._Gearstation.CCVar;
 using Content.Shared._Starlight.Commands;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
+using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Timer = Robust.Shared.Timing.Timer;
 
@@ -16,6 +18,7 @@ namespace Content.Server.RoundEnd;
 public sealed partial class RoundEndSystem
 {
     public float AutoCallTime;
+    private int _autoCallTimesRefused; // Gear - no 3000 hour shifts
 
     public void CancelRoundRestartTimer(ICommonSession? canceller = null)
     {
@@ -91,7 +94,7 @@ public sealed partial class RoundEndSystem
 
     private void StartCallVote()
     {
-        if (_gameTiming.CurTime.Hours >= 3) {RequestRoundEnd(null, null, false, "round-end-system-shuttle-force-called-announcement","round-end-system-shuttle-sender-announcement",true); return;} // Gear - no recall over 3 hours
+        if (_autoCallTimesRefused > _cfg.GetCVar(GearCCVars.MaxAutoEvacRefuseMax)) {RequestRoundEnd(null, null, false, "round-end-system-shuttle-force-called-announcement","round-end-system-shuttle-sender-announcement",true); return;} // Gear - no 3000 hour shifts
         var options = new VoteOptions()
         {
             DisplayVotes = false,
@@ -120,6 +123,7 @@ public sealed partial class RoundEndSystem
             {
                 _chatManager.DispatchServerAnnouncement(Loc.GetString("round-end-system-shuttle-auto-vote-result-no",
                     ("minutes", _cfg.GetCVar(CCVars.EmergencyShuttleAutoCallExtensionTime))));
+                _autoCallTimesRefused++; // Gear - no 3000 hour shifts
             }
         };
     }
