@@ -10,3 +10,9 @@
   title: lobby-state-background-drunkardsspreeredux-title
   artist: lobby-state-background-drunkardsspreeredux-artist
 
+- type: lobbyBackground
+  id: GrantDeafedAuthor
+  background: /Textures/_Gearstation/LobbyScreens/grantdeafedauthor.webp
+  title: lobby-state-background-grantdeafedauthor-title
+  artist: lobby-state-background-grantdeafedauthor-artist
+
