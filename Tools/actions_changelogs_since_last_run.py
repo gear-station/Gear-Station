@@ -23,7 +23,7 @@ GITHUB_API_URL = os.environ.get("GITHUB_API_URL", "https://api.github.com")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 DISCORD_CHANGELOG_ROLE_ID = int(os.environ.get("DISCORD_CHANGELOG_ROLE_ID", "1308143973684088883"))
 
-CHANGELOG_FILE = "Resources/Changelog/ChangelogStarlight.yml"
+CHANGELOG_FILE = "Resources/Changelog/ChangelogGear.yml"
 # Must match the changelog job name in .github/workflows/publish.yml and publish-testing.yml
 CHANGELOG_JOB_NAME = "Publish Changelogs"
 MAX_RUN_PAGES = 10
