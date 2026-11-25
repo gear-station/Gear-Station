@@ -13,3 +13,5 @@
     currentLabel: reagent-name-dr-gibb
   - type: Sprite
     sprite: _Gearstation/Objects/Consumable/Drinks/dr_gibb_bottle.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
