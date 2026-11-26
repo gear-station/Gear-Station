@@ -70,5 +70,12 @@ Entries:
   id: 4201
   time: '2026-11-26T19:03:16.000000+00:00'
   url: https://github.com/gear-station/Gear-Station/pull/42
+- author: Saver310
+  changes:
+  - message: Added Ry-Zeal metaplush.
+    type: Add
+  id: 4301
+  time: '2026-11-26T20:01:07.000000+00:00'
+  url: https://github.com/gear-station/Gear-Station/pull/43
 Order: -1
 
