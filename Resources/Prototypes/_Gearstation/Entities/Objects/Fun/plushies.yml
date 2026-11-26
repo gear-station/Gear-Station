@@ -185,3 +185,35 @@
     soundHit:
       path: /Audio/_Starlight/Voice/Avali/avali_1.ogg
     attackRate: 1
+
+- type: entity
+  parent: PlushieVox
+  id: PlushieVoxZeal
+  name: chemist vox plushie
+  description: A slightly burnt plushie resembling a certain chemist vox. It smells faintly of sulfuric acid and war crimes.
+  components:
+  - type: Sprite
+    sprite: _Gearstation/Objects/Fun/Plushies/zeal.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Gearstation/Objects/Fun/Plushies/zeal.rsi
+  - type: EmitSoundOnUse
+    sound: &PlushieVoxZealCawSound
+      path: /Audio/_Moffstation/Voice/Vox/vox_caw.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnLand
+    sound: *PlushieVoxZealCawSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieVoxZealCawSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieVoxZealCawSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieVoxZealCawSound
+  - type: Edible
+    useSound: *PlushieVoxZealCawSound
+  - type: MeleeWeapon
+    soundHit: *PlushieVoxZealCawSound
+    attackRate: 1
+  - type: UseDelay
+    delay: 1.0

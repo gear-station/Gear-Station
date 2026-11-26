@@ -64,3 +64,14 @@
     - !type:ListingLimitedStockCondition
       stock: 2
 
+- type: listing
+  id: VendorPlushieVoxZeal
+  productEntity: PlushieVoxZeal
+  cost:
+    NTCredit: 20
+  categories:
+    - SLCrew
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
