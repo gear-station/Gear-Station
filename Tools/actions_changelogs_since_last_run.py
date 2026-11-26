@@ -16,7 +16,7 @@ import sys
 import yaml
 import time
 
-DEBUG = True
+DEBUG = False
 COUNT_FAILS_DEBUG = False
 DEBUG_CHANGELOG_FILE_OLD = Path("Resources/Changelog/OldGear.yml")
 GITHUB_API_URL = os.environ.get("GITHUB_API_URL", "https://api.github.com")
