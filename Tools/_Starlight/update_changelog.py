@@ -2,6 +2,10 @@ import os
 import yaml
 import re
 from datetime import datetime
+import time
+from typing import Any
+import requests
+import sys
 from github import Github
 
 print("Environment Variables:")
@@ -9,14 +13,109 @@ changelog_path = os.getenv("CHANGELOG_FILE_PATH")
 pr_number = os.getenv("PR_NUMBER")
 repo_name = os.getenv("GITHUB_REPOSITORY")
 github_token = os.getenv("GITHUB_TOKEN")
+webhook_url = os.getenv("DISCORD_WEBHOOK_URL")
 print(f"CHANGELOG_FILE_PATH: {changelog_path}")
 print(f"PR_NUMBER: {pr_number}")
 print(f"GITHUB_REPOSITORY: {repo_name}")
 print(f"GITHUB_TOKEN is set: {bool(github_token)}")
+print(f"DISCORD_WEBHOOK_URL is set: {bool(webhook_url)}")
+
+EMBED_DESCRIPTION_LIMIT = 4096
+EMBED_TITLE_LIMIT = 256
+EMBED_FIELD_NAME_LIMIT = 256
+EMBED_FIELD_VALUE_LIMIT = 1024
+TYPES_TO_EMOJI = {"Fix": "🐛", "Add": "🆕", "Remove": "❌", "Tweak": "⚒️"}
 
 g = Github(github_token)
 repo = g.get_repo(repo_name)
 pr = repo.get_pull(int(pr_number))
+
+def post_with_retries(payload: dict[str, Any]):
+    attempt = 0
+    while True:
+        try:
+            resp = requests.post(webhook_url, json=payload, timeout=10)
+            if resp.status_code == 429:
+                attempt += 1
+                if attempt > 20:
+                    print("Too many rate limit retries; giving up", file=sys.stderr)
+                    sys.exit(1)
+                retry_after = resp.json().get("retry_after", 5)
+                print(f"Rate limited; sleeping {retry_after}s (attempt {attempt})")
+                time.sleep(retry_after)
+                continue
+            resp.raise_for_status()
+            return
+        except requests.exceptions.RequestException as e:
+            attempt += 1
+            if attempt > 5:
+                # Fail the job so the next run does not treat these entries as sent.
+                print(f"Failed after retries: {e}", file=sys.stderr)
+                sys.exit(1)
+            backoff = 2 ** attempt
+            print(f"Request failed ({e}), backing off {backoff}s and retrying")
+            time.sleep(backoff)
+
+def build_embed_for_pr(entries: list[dict[str,Any]], merge_time) -> dict[str, Any]:
+    authors = set()
+    description_lines: list[str] = []
+
+    for entry in entries:
+        if (type(entry) == str):
+            continue
+        authors.add(entry.get("author","unknown"))
+        url = entry.get("url").strip() or None
+        for change in entry.get("changes",[]):
+            print(change)
+            emoji = TYPES_TO_EMOJI.get(change.get("type",""), "❓")
+            message = change.get("message","").strip()
+            if len(message) > 300:
+                message = message[:297].rstrip() + "..."
+            line = f"{emoji} {message}"
+            description_lines.append(line)
+
+    description = "\n".join(description_lines)
+    if len(description) > EMBED_DESCRIPTION_LIMIT:
+        description = description[: EMBED_DESCRIPTION_LIMIT - 50].rstrip() + "\n*...truncated...*"
+
+    sorted_authors = sorted(authors)
+    authors_str = ", ".join(sorted_authors)
+    title = authors_str
+    if len(title) > EMBED_TITLE_LIMIT:
+        # truncate authors part to fit
+        overflow = len(title) - EMBED_TITLE_LIMIT + 3  # for "..."
+        # remove overflow chars from authors_str
+        truncated_authors = authors_str
+        if overflow < len(authors_str):
+            truncated_authors = authors_str[: -overflow].rstrip()
+            # avoid cutting mid-comma: optionally rstrip to last comma-space
+            if "," in truncated_authors:
+                truncated_authors = truncated_authors.rsplit(",", 1)[0]
+            truncated_authors = truncated_authors.rstrip() + "..."
+        title = truncated_authors
+        if len(title) > EMBED_TITLE_LIMIT:
+            title = title[:EMBED_TITLE_LIMIT]
+
+    author_field = ", ".join(sorted_authors)
+    embed: dict[str, Any] = {
+        "title": title,
+        "description": description,
+  #      "fields": [
+  #          {"name": "Author(s)", "value": author_field[:EMBED_FIELD_VALUE_LIMIT], "inline": False}
+  #      ],
+        "footer": {"text": "Gear changelog"},
+        "timestamp": merge_time.isoformat(timespec='microseconds'),
+    }
+
+    embed["url"] = entries[0].get("url","")
+    return embed
+
+def send_embed(embed: dict[str, Any]):
+    payload = {
+        "embeds": [embed],
+        "allowed_mentions": {"parse": []},  # no automatic pings
+    }
+    post_with_retries(payload)
 
 def remove_comments(pr_body):
     """
@@ -77,6 +176,7 @@ def update_changelog():
         print("Found ':cl:' in PR body after removing comments.")
         merge_time = pr.merged_at
         blocks = parse_changelog(cleaned_body, pr.user.login)
+        changes : list[dict[str,Any]] = []
 
         print("Parsed entries:", blocks)
 
@@ -103,6 +203,7 @@ def update_changelog():
                 "time": merge_time.isoformat(timespec='microseconds'),
                 "url": f"https://github.com/{repo_name}/pull/{pr_number}"
             }
+            changes.append(changelog_entry)
             changelog_data["Entries"].append(changelog_entry)
 
         os.makedirs(os.path.dirname(changelog_path), exist_ok=True)
@@ -111,6 +212,9 @@ def update_changelog():
             yaml.dump(changelog_data, file, allow_unicode=True)
             file.write('\n')
         print(f"Changelog updated and written to {changelog_path}")
+
+        if (bool(webhook_url)):
+            send_embed(build_embed_for_pr(changes,merge_time))
     else:
         print("No ':cl:' tag found in PR body after removing comments.")
         return

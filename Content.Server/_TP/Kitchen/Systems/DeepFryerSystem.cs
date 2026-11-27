@@ -411,7 +411,8 @@ public sealed partial class DeepFryerSystem : EntitySystem
 
         // Now we remove the cooking time and play the buzzer sound.
         _cookingStartTimes.Remove(friedEntUid);
-        _audio.PlayPvs(deepFryerComp.Buzzer, fryerEntUid, AudioParams.Default.WithVolume(-5));
+        _audio.PlayPvs(deepFryerComp.Buzzer, fryerEntUid, AudioParams.Default.WithVolume(-1)); // Gear - fryer visual cue
+        _popup.PopupEntity(Loc.GetString("Deep-Fryer-Message-Done",("result", recipeResult)), fryerEntUid); // Gear - fryer visual cue
     }
 
     /// <summary>
@@ -497,6 +498,7 @@ public sealed partial class DeepFryerSystem : EntitySystem
         Dirty(friedEntUid, deepFriedComp);
         RaiseLocalEvent(friedEntUid, new DeepFriedLevelChangedEvent());
         _cookingStartTimes.Remove(friedEntUid);
-        _audio.PlayPvs(deepFryerComp.Buzzer, fryerEntUid, AudioParams.Default.WithVolume(-5));
+        _audio.PlayPvs(deepFryerComp.Buzzer, fryerEntUid, AudioParams.Default.WithVolume(-1)); // Gear - fryer visual cue
+        _popup.PopupEntity(Loc.GetString("Deep-Fryer-Message-Done",("result", friedEntUid)), fryerEntUid); // Gear - fryer visual cue
     }
 }

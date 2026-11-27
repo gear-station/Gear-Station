@@ -761,12 +761,14 @@ public sealed partial class ChatUIController : UIController
         {
             case ChatSelectChannel.None:
                 box.ChatInput.ChannelSelector.UpdateChannelSelectButton(box.SelectedChannel, null, null); // Starlight edit
+                _typingIndicator?.UpdateChannelIndicator(box.SelectedChannel);  // Moffstation - Typing indicators
                 break;
             default:
                 //Starlight begin
                 if(customChannel is not null) box.ChatInput.ChannelSelector.UpdateChannelSelectButton(prefixChannel, null, customChannel);
                 else box.ChatInput.ChannelSelector.UpdateChannelSelectButton(prefixChannel, radioChannel, null);
                 //Starlight end
+                _typingIndicator?.UpdateChannelIndicator(prefixChannel);  // Moffstation - Typing indicators
                 break;
         }
     }

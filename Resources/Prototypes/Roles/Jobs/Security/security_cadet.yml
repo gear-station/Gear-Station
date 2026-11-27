@@ -11,8 +11,7 @@
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
   access:
-# - Security # Starlight change
-  - Cadet # Starlight change
+  - Security
   - Brig
   - Maintenance
   - External

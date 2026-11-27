@@ -1,0 +1,30 @@
+- type: entity
+  parent: BaseAntagGhostRoleRule
+  id: FaxRelaySpawn
+  components:
+  - type: StationEvent
+    earliestStart: 15
+    weight: 3
+    minimumPlayers: 5
+    duration: null
+    occursDuringRoundEnd: false
+  - type: AntagRandomObjectives
+    forcedObjectiveGroup: RelayOperatorForcedObjectives
+    storyObjectiveGroup: RelayOperatorStoryObjectives
+    storyObjectiveCount: 2
+    maxDifficulty: 4
+    sets:
+    - groups: RelayOperatorObjectiveGroup
+  - type: DynamicRuleCost
+    cost: 100
+
+  - type: RuleGrids
+  - type: LoadMapRule
+    mapPath: /Maps/_Gearstation/fax_relay.yml
+  - type: AntagLoadProfileRule
+  - type: AntagSelection
+    agentName: relay-operator-round-end-name
+    antags:
+    - !type:FixedAntagCount
+      proto: RelayOperator
+

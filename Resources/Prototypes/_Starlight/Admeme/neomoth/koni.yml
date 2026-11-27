@@ -14,8 +14,6 @@
         Unsexed: UnisexCatMoth
     - type: BodyEmotes
       soundsId: CatMothBodyEmotes
-    - type: TextToSpeech
-      voice: ICASSP48
     - type: Body
       prototype: CatMoth
     - type: Loadout

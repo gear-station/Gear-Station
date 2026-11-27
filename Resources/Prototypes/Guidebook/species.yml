@@ -24,7 +24,7 @@
   - Vox
   - Vulpkanin
   - Neocyte # Starlight
-  #- IPC #FH Gear - disable IPC
+  - IPC # FH, but appears on Starlight folder to prevent an error that shows it outside the guidebook
 
 
 - type: guideEntry

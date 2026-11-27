@@ -7,6 +7,8 @@ using Content.Server.Voting.Managers;
 using Content.Shared._Starlight.Commands;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
+using Content.Shared.GameTicking;
+using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Timer = Robust.Shared.Timing.Timer;
 
@@ -38,6 +40,7 @@ public sealed partial class RoundEndSystem
         _countdownTokenSource = new CancellationTokenSource();
 
         countdownTime ??= TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.RoundRestartTime));
+        InitializeRoundEndExtension(countdownTime.Value); // Moff - Round end extension vote
         int time;
         string unitsLocString;
         if (countdownTime.Value.TotalDays >= 1)
@@ -69,12 +72,26 @@ public sealed partial class RoundEndSystem
         Timer.Spawn(countdownTime.Value, AfterEndRoundRestart, _countdownTokenSource.Token);
     }
 
+    [SubscribeLocalEvent]
+    private void OnRoundEndCancelled(RoundEndCancelMessageEvent ev)
+    {
+        _countdownTokenSource?.Cancel();
+        _countdownTokenSource = null;
+        _cooldownTokenSource?.Cancel();
+        _cooldownTokenSource = null;
+
+        CantRecall = false;
+        LastCountdownStart = null;
+        ExpectedCountdownEnd = null;
+        SetAutoCallTime();
+        RaiseLocalEvent(RoundEndSystemChangedEvent.Default);
+    }
+
     public bool IsRestartTimerActive() =>
         _gameTicker.RunLevel == GameRunLevel.PostRound && _countdownTokenSource is not null;
 
     private void StartCallVote()
     {
-        if (_gameTiming.CurTime.Hours >= 3) {RequestRoundEnd(null, null, false, "round-end-system-shuttle-force-called-announcement","round-end-system-shuttle-sender-announcement",true); return;} // Gear - no recall over 3 hours
         var options = new VoteOptions()
         {
             DisplayVotes = false,

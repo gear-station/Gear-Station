@@ -24,7 +24,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobReporter
-      time: 10h
+      time: 2h # Gear-start - drip
   equipment:
     head: ClothingHeadHatFedoraPress
 
@@ -36,6 +36,6 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobReporter
-      time: 35h
+      time: 9h # Gear-start - drip
   equipment:
     outerClothing: ClothingOuterVestPress

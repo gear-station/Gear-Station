@@ -3,9 +3,12 @@
   name: job-name-centcommoff
   description: job-description-centcommoff
   playTimeTracker: JobCentralCommandOfficial
-  requirements:
-  - !type:RolesRequirement
-    proto: StaffAndMentorOnlyRolesReq
+  # Gear-start - whitelist
+  whitelisted: true
+  #requirements:
+  #- !type:RolesRequirement
+  #  proto: StaffAndMentorOnlyRolesReq
+  # Gear-end - whitelist
   setPreference: false
   startingGear: CentcommGear
   icon: "JobIconCentralCommandOfficial" #Starlight

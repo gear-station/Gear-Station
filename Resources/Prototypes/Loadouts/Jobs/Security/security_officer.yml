@@ -6,12 +6,12 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobWarden
-      time: 6h
+      time: 2h
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
       department: Security
-      time: 60h
+      time: 7h # Gear-start - drip
 
 # Head
 - type: loadout

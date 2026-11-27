@@ -3,7 +3,6 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Content.Shared.Radio.EntitySystems;
-using Content.Shared._Starlight.TextToSpeech;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Content.Server._Starlight.Language;
@@ -140,9 +139,6 @@ public sealed partial class HeadsetSystem : SharedHeadsetSystem
             };
             _netMan.ServerSendMessage(msg, actor.PlayerSession.Channel);
         }
-
-        if (parent != args.MessageSource && TryComp(args.MessageSource, out TextToSpeechComponent? _))
-            args.Receivers.Add(parent);
         // Starlight - End
     }
 }

@@ -1,0 +1,16 @@
+- type: entity
+  parent: DrinkGlass
+  id: DrinkAceOfSpades
+  suffix: ace of spades
+  description: Even looking at it makes you want to get wasted on a cargo shuttle.
+  components:
+  - type: Solution
+    id: drink
+    solution:
+      reagents:
+      - ReagentId: AceOfSpades
+        Quantity: 30
+  - type: Icon
+    sprite: _Gearstation/Objects/Consumable/Drinks/aceofspades.rsi
+    state: icon
+

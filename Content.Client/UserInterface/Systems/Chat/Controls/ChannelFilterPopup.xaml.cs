@@ -45,19 +45,6 @@ public sealed partial class ChannelFilterPopup : Popup
     public event Action<ChatChannel, bool>? OnChannelFilter;
     public event Action<string>? OnNewHighlights;
 
-    // Starlight start
-    private readonly Dictionary<ProtoId<RadioChannelPrototype>, CheckBox> _ttsMuteStates = new();
-
-    /// <summary>
-    ///     Event triggered when the clear TTS queue button is pressed.
-    /// </summary>
-    public event Action? OnClearTTSQueue;
-
-    /// <summary>
-    ///     Event triggered when a TTS channel's mute state is toggled.
-    /// </summary>
-    public event Action<ProtoId<RadioChannelPrototype>, bool>? OnTTSMuteStateChanged;
-    // Starlight end
 
     public ChannelFilterPopup()
     {
@@ -82,11 +69,6 @@ public sealed partial class ChannelFilterPopup : Popup
         _cfg.OnValueChanged(CCVars.ChatAutoFillHighlights, OnAutoFillCVarChanged);
         // Starlight end
 
-        // Starlight start
-        InitializeTTSMuteChannels();
-        TTSClearQueueButton.OnPressed += _ => OnClearTTSQueue?.Invoke();
-        TTSToggleAllButton.OnPressed += _ => ToggleAllTTSMuteCheckboxes();
-        // Starlight end
     }
 
     // Starlight start
@@ -102,42 +84,6 @@ public sealed partial class ChannelFilterPopup : Popup
         _cfg.UnsubValueChanged(CCVars.ChatAutoFillHighlights, OnAutoFillCVarChanged);
     }
 
-    /// <summary>
-    ///     Creates checkbox toggle mute buttons for each defined Radio channel prototype.
-    /// </summary>
-    private void InitializeTTSMuteChannels()
-    {
-        foreach (var channel in _protoManager.EnumeratePrototypes<RadioChannelPrototype>()
-                     .OrderBy(channel => Loc.GetString(channel.Name)))
-        {
-            var checkbox = new CheckBox
-            {
-                Text = Loc.GetString(channel.Name),
-                Pressed = false
-            };
-
-            var channelId = channel.ID;
-            checkbox.OnToggled += args => OnTTSMuteStateChanged?.Invoke(channelId, args.Pressed);
-
-            _ttsMuteStates[channel.ID] = checkbox;
-            TTSChannelsVBox.AddChild(checkbox);
-        }
-    }
-
-    /// <summary>
-    ///     Toggles all mute buttons on, then off, and so on.
-    /// </summary>
-    private void ToggleAllTTSMuteCheckboxes()
-    {
-        bool allChecked = _ttsMuteStates.Values.All(checkbox => checkbox.Pressed);
-        bool newState = !allChecked;
-
-        foreach (var (channelId, checkbox) in _ttsMuteStates)
-        {
-            checkbox.Pressed = newState;
-            OnTTSMuteStateChanged?.Invoke(channelId, newState);
-        }
-    }
 
     // Starlight end
 

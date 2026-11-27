@@ -5,7 +5,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBartender
-      time: 52h # 1 hour per week for 1 year
+      time: 9h # Gear-start - drip
 
 # Head
 - type: loadout

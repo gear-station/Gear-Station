@@ -6,7 +6,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobResearchDirector
-      time: 20h
+      time: 9h # Gear-start - drip
 
 # Head
 - type: loadout

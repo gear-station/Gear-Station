@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Shared._Gearstation.CCVar; // Gear - vacuum hearing slider
 using Content.Shared._Starlight.Sound;
 using Content.Shared.Audio;
 using Content.Shared.Doors.Components;
@@ -196,7 +197,7 @@ public sealed partial class VacuumHearingSystem : EntitySystem
 
         var air = distance * AirAbsorptionPerTile * (1f - vacuum);
 
-        return walls + helmet + air + (vacuumOcclusion * vacuum);
+        return (walls + helmet + air + (vacuumOcclusion * vacuum)) * _cfg.GetCVar(GearCCVars.VacuumHearingMultiplier); // Gear - vacuum hearing slider
     }
 
     private bool CarriesThroughStructure(SourceInfo? source)

@@ -6,17 +6,19 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChemist
-      time: 6h
+      time: 3h # Gear-start - drip
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 6h
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: Medical
-      time: 60h
+      time: 6h # Gear-start - drip
+  # Gear-start - drip
+  #- !type:JobRequirementLoadoutEffect
+  #  requirement:
+  #    !type:DepartmentTimeRequirement
+  #    department: Medical
+  #    time: 60h
+  # Gear-end - drip
 
 # Mid-level timer for players who have a solid amount of experience
 - type: loadoutEffectGroup
@@ -26,7 +28,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 20h
+      time: 6h # Gear-start - drip
 
 # Mid-level timer for CMO
 - type: loadoutEffectGroup
@@ -36,4 +38,4 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChiefMedicalOfficer
-      time: 20h
+      time: 9h # Gear-start - drip

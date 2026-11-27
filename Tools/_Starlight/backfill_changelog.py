@@ -75,7 +75,7 @@ def find_missing_changelog_prs():
     print(f"\n=== Checking last {commits_count} commits ===")
 
     # Get recent commits from the main branch
-    commits = list(repo.get_commits(sha='Starlight'))[:commits_count]
+    commits = list(repo.get_commits(sha='Gear-Main'))[:commits_count]
 
     missing_prs = []
     processed_count = 0

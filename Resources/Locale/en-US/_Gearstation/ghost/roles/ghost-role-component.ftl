@@ -1,0 +1,3 @@
+ghost-role-information-relay-operator-name = Fax Relay Operator
+ghost-role-information-relay-operator-information = Solicit the station through the power of telemarketing!
+ghost-role-information-relay-operator-rules = You are a [color=red][bold]Fax Relay Operator[/bold][/color]. Write faxes and send them to the station to complete your objectives. You don't remember any of your previous life, and you don't remember anything you learned as a ghost. You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc. You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.

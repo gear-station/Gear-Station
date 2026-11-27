@@ -2,6 +2,7 @@ using Content.Client.Audio;
 using Content.Client.GameTicking.Managers;
 using Content.Client.Lobby.UI;
 using Content.Client.Message;
+using Content.Client._Moffstation.ReadyManifest;    // Moffstation
 using Content.Client.Playtime;
 using Content.Client.UserInterface.Systems.Chat;
 using Content.Client.Voting;
@@ -34,6 +35,7 @@ namespace Content.Client.Lobby
         [Dependency] private ClientsidePlaytimeTrackingManager _playtimeTracking = default!;
         [Dependency] private IClientPreferencesManager _preferences = default!; //Starlight
         [Dependency] private IPrototypeManager _protoMan = default!;
+        private ReadyManifestSystem _readyManifest = default!;  // Moffstation - Ready manifest
 
         private ClientGameTicker _gameTicker = default!;
         private ContentAudioSystem _contentAudioSystem = default!;
@@ -56,6 +58,7 @@ namespace Content.Client.Lobby
             _gameTicker = _entityManager.System<ClientGameTicker>();
             _contentAudioSystem = _entityManager.System<ContentAudioSystem>();
             _contentAudioSystem.LobbySoundtrackChanged += UpdateLobbySoundtrackInfo;
+            _readyManifest = _entityManager.EntitySysManager.GetEntitySystem<ReadyManifestSystem>();
 
             chatController.SetMainChat(true);
 
@@ -74,6 +77,7 @@ namespace Content.Client.Lobby
 
             Lobby.CharacterPreview.CharacterSetupButton.OnPressed += OnSetupPressed;
             // Starlight-edit: priorities are edited in their own window, OnAnyCharacterOrJobChange covers it
+            Lobby.ManifestButton.OnPressed += OnManifestPressed;    // Moffstation - Ready manifest
             Lobby.ReadyButton.OnPressed += OnReadyPressed;
             Lobby.ReadyButton.OnToggled += OnReadyToggled;
             Lobby.ReadyButton.TooltipSupplier = GetReadyButtonTooltip;
@@ -121,6 +125,7 @@ namespace Content.Client.Lobby
             _voteManager.ClearPopupContainer();
 
             Lobby!.CharacterPreview.CharacterSetupButton.OnPressed -= OnSetupPressed;
+            Lobby!.ManifestButton.OnPressed -= OnManifestPressed;   // Moffstation - Ready manifest
             Lobby!.ReadyButton.OnPressed -= OnReadyPressed;
             Lobby!.ReadyButton.OnToggled -= OnReadyToggled;
 
@@ -149,6 +154,11 @@ namespace Content.Client.Lobby
 
         private void OnReadyToggled(BaseButton.ButtonToggledEventArgs args)
             => SetReady(args.Pressed); // Starlight-edit: Lambda
+
+        // Moffstation - Start - Ready manifest
+        private void OnManifestPressed(BaseButton.ButtonEventArgs args)
+            => _readyManifest.RequestReadyManifest();
+        // Moffstation - End
 
         public override void FrameUpdate(FrameEventArgs e)
         {
@@ -211,6 +221,7 @@ namespace Content.Client.Lobby
                 Lobby!.ReadyButton.Pressed = false;
                 Lobby!.ReadyButton.Disabled = false;
                 Lobby!.ObserveButton.Disabled = false;
+                Lobby!.ManifestButton.Disabled = true;  // Moffstation - Ready manifest
             }
             else
             {
@@ -224,6 +235,7 @@ namespace Content.Client.Lobby
                 }
                 Lobby!.ReadyButton.ToggleMode = true;
                 Lobby!.ReadyButton.Disabled = !_readyPossibleWithCharacters; // Starlight - false -> !_readyPossibleWithCharacters
+                Lobby!.ManifestButton.Disabled = false; // Moffstation - Ready manifest
                 Lobby!.ObserveButton.Disabled = true;
             }
 

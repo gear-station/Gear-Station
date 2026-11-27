@@ -338,6 +338,12 @@
   - type: MeleeWeapon
     wideAnimationRotation: 110
     soundHit: *SoundRubberChicken
+    # Gear-start - shut up
+    damage:
+        groups: null
+        types:
+          Blunt: 0
+    # Gear-end - shut up
 
 - type: entity
   parent: BaseItem

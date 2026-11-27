@@ -17,13 +17,14 @@ import yaml
 import time
 
 DEBUG = False
-DEBUG_CHANGELOG_FILE_OLD = Path("Resources/Changelog/Old.yml")
+COUNT_FAILS_DEBUG = False
+DEBUG_CHANGELOG_FILE_OLD = Path("Resources/Changelog/OldGear.yml")
 GITHUB_API_URL = os.environ.get("GITHUB_API_URL", "https://api.github.com")
 
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 DISCORD_CHANGELOG_ROLE_ID = int(os.environ.get("DISCORD_CHANGELOG_ROLE_ID", "1308143973684088883"))
 
-CHANGELOG_FILE = "Resources/Changelog/ChangelogStarlight.yml"
+CHANGELOG_FILE = "Resources/Changelog/ChangelogGear.yml"
 # Must match the changelog job name in .github/workflows/publish.yml and publish-testing.yml
 CHANGELOG_JOB_NAME = "Publish Changelogs"
 MAX_RUN_PAGES = 10
@@ -102,7 +103,7 @@ def changelog_job_succeeded(sess: requests.Session, run: Any) -> bool:
     resp.raise_for_status()
     for job in resp.json().get("jobs", []):
         if job["name"] == CHANGELOG_JOB_NAME:
-            return job["status"] == "completed" and job["conclusion"] == "success"
+            return (job["status"] == "completed" and job["conclusion"] == "success") or COUNT_FAILS_DEBUG
     return False
 
 

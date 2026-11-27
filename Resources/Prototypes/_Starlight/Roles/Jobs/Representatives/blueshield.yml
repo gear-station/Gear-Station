@@ -4,6 +4,7 @@
   name: job-name-blueshield
   description: job-description-blueshield
   playTimeTracker: JobBlueShield
+  whitelisted: true # Gear - whitelist
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
@@ -14,8 +15,10 @@
     - !type:RoleTimeRequirement
       role: JobBrigmedic
       time: 3h # Lower stakes version of the same role, and forces you to get Paramed time too. Totals to about 8 hours paramed+brigmed combined.
-    - !type:RolesRequirement
-      proto: ExtRolesReq
+    # Gear-start - whitelist
+    #- !type:RolesRequirement
+    #  proto: ExtRolesReq
+    # Gear-end - whitelist
     - !type:TraitsRequirement
       traits:
         - Iterator

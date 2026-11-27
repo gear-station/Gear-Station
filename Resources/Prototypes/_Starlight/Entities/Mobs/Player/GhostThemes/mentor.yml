@@ -8,9 +8,10 @@
       state: ghost-narsie
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: MentorRolesReq
-  category: Mentor
+  - !type:AdminTitleRequirement
+    titles:
+    - Any
+  category: Staff
 
 - type: ghostTheme
   id: Daemon
@@ -22,6 +23,7 @@
       state: ghost-daemon
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: MentorRolesReq
-  category: Mentor
+  - !type:AdminTitleRequirement
+    titles:
+    - Any
+  category: Staff

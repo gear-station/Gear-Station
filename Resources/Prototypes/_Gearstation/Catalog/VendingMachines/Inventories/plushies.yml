@@ -1,0 +1,77 @@
+- type: listing
+  id: VendorPlushieMothDeathshead
+  productEntity: PlushieMothDeathshead
+  cost:
+    NTCredit: 20
+  categories:
+    - SLCrew
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
+- type: listing
+  id: VendorPlushieMothAstor
+  productEntity: PlushieMothAstor
+  cost:
+    NTCredit: 20
+  categories:
+    - SLCrew
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
+- type: listing
+  id: VendorPlushieMothFirewalker
+  productEntity: PlushieMothFirewalker
+  cost:
+    NTCredit: 20
+  categories:
+    - SLCrew
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
+- type: listing
+  id: VendorPlushieMothPlushann
+  productEntity: PlushieMothPlushann
+  cost:
+    NTCredit: 20
+  categories:
+    - SLCrew
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
+- type: listing
+  id: VendorPlushieAvaliTwix
+  productEntity: PlushieAvaliTwix
+  cost:
+    NTCredit: 20
+  categories:
+    - SLCrew
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
+- type: listing
+  id: VendorPlushieAvaliKira
+  productEntity: PlushieAvaliKira
+  cost:
+    NTCredit: 20
+  categories:
+    - SLCrew
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
+- type: listing
+  id: VendorPlushieVoxZeal
+  productEntity: PlushieVoxZeal
+  cost:
+    NTCredit: 20
+  categories:
+    - SLCrew
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+

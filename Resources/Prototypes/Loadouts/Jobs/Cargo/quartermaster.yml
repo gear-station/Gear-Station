@@ -6,7 +6,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobQuartermaster
-      time: 20h
+      time: 9h # Gear-start - drip
 
 # Jumpsuit
 - type: loadout

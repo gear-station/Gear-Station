@@ -35,13 +35,6 @@ public sealed partial class GermanAccentSystem : EntitySystem
                       (char)(message.Text[match.Index + 2] + 14) +
                       message.Text[(match.Index + 3)..];
 
-                var tts = message.Tts ?? message.Text;
-                if (tts.Length > match.Index + 2)
-                    message.Tts = tts[..match.Index] +
-                          (char)(tts[match.Index] - 16) +
-                          (char)(tts[match.Index + 1] - 7) +
-                          (char)(tts[match.Index + 2] + 14) +
-                          tts[(match.Index + 3)..];
             }
         }
 

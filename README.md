@@ -23,7 +23,7 @@ Gear Station is STARLIGHT fork focused on admin involvement to create interestin
 STARLIGHT is an open source project aimed at creating unique mechanics and a pleasant game atmosphere in Space Station 14, a game about survival on a space station where there are constant confrontations between the crew and antagonists created to prevent the crew from achieving their goals.
 
 ## Developer Documentation
-Gear Station's contributor guidelines are still in the making.
+Gear Station's contribution guidelines can be found [here](https://github.com/gear-station/Gear-Station/wiki/Contribution).
 
 The [Starlight Developer Documentation](https://docs.starlight.network/s/d49865f5-b555-4803-b5d7-5c2fde54fbd9/doc/developer-guides-Hf0UsFaugc) contains useful documents and resources on getting started with this repository.
 

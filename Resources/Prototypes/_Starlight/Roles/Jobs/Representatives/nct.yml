@@ -4,9 +4,12 @@
   name: job-name-nct
   description: job-description-nct
   playTimeTracker: JobNanotrasenCareerTrainer
+  whitelisted: true # Gear - whitelist
   requirements:
-    - !type:RolesRequirement
-      proto: StaffAndMentorOnlyRolesReq
+    # Gear-start - whitelist
+    #- !type:RolesRequirement
+    #  proto: StaffAndMentorOnlyRolesReq
+    # Gear-end - whitelist
     - !type:TraitsRequirement
       traits:
         - Iterator

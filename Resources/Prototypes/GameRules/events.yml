@@ -53,6 +53,7 @@
     - id: RevenantSpawn
     - id: RailroadingTerminator # Starlight
     - id: ScrapperSpawn # Starlight
+    - id: FaxRelaySpawn # Gear - fax relay
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 

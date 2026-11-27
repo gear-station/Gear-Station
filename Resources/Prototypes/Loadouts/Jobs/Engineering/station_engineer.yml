@@ -6,17 +6,19 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
-      time: 6h
+      time: 6h # Gear-start - drip
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 6h
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 60h
+      time: 3h # Gear-start - drip
+  # Gear-start - drip
+  #- !type:JobRequirementLoadoutEffect
+  #  requirement:
+  #    !type:DepartmentTimeRequirement
+  #    department: Engineering
+  #    time: 60h
+  # Gear-end - drip
 
 # Head
 - type: startingGear

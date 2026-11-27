@@ -1,0 +1,32 @@
+- type: antag
+  id: RelayOperator
+  name: ghost-role-information-relay-operator-name
+  antagonist: true
+  setPreference: false
+  objective: relay-operator-briefing
+  playTimeTracker: AntagRelayOperator
+
+- type: antagSpecifier
+  parent: RestrictedAntag
+  id: RelayOperator
+  prefRoles:
+  - RelayOperator
+  spawnerPrototype: RelayOperatorSpawner
+  pickPlayer: false
+  startingGear: BlackstarInitiateGear
+  roleLoadout:
+  - RoleSurvivalStandard
+  briefing:
+    text: relay-operator-role-greeting
+    color: Yellow
+    sound: "/Audio/Machines/printer.ogg"
+  allowNonHumans: true
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - NamesBlackstarLegionnaireLast
+  blacklist:
+    components:
+    - AntagImmune
+  mindRoles:
+  - MindRoleGhostRoleFreeAgent

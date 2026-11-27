@@ -8,8 +8,10 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 72000 # 20 hrs
-    - !type:RolesRequirement
-      proto: ExtRolesReq
+    # Gear-start - whitelist
+    #- !type:RolesRequirement
+    #  proto: ExtRolesReq
+    # Gear-end - whitelist
   setPreference: false
   startingGear: DecimusGear
   icon: JobIconDecimus

@@ -1,0 +1,20 @@
+- type: reagent
+  id: AceOfSpades
+  name: reagent-name-ace-of-spades
+  parent: BaseAlcohol
+  desc: reagent-desc-ace-of-spades
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: aceofspades
+  color: "#4a4c76"
+  flammability: 3
+  metamorphicSprite:
+    sprite: _Gearstation/Objects/Consumable/Drinks/aceofspadesglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 2

@@ -396,6 +396,7 @@ namespace Content.Server.RoundEnd
 
         public override void Update(float frameTime)
         {
+            RoundEndExtensionsUpdate(); // Moff - Round end extension vote
             // Check if we should auto-call.
             // Starlight begin
             // (removal here)

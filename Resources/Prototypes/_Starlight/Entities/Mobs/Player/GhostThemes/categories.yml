@@ -9,30 +9,14 @@
   priority: 1
 
 - type: ghostThemeCategory
-  id: Mentor
-  name: Mentor
+  id: Staff
+  name: Staff
   priority: 2
 
 - type: ghostThemeCategory
-  id: Staff
-  name: Staff
-  priority: 3
-
-- type: ghostThemeCategory
-  id: NullLink
-  name: NullLink
-  priority: 4
-
-- type: ghostThemeCategory
-  id: Event
-  name: Event
-  priority: 5
-
-- type: ghostThemeCategory
   id: Tester
-  name: Tester
-  priority: 6
-  hideIfNoUnlocks: true
+  name: Contributor
+  priority: 3
 
   # When filtering, hide all other categories, show this one.
 - type: ghostThemeCategory

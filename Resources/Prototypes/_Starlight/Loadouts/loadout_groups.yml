@@ -159,17 +159,6 @@
   - FancyPen
 
 - type: loadoutGroup
-  id: AssistantGlasses
-  name: loadout-group-assistant-glasses
-  minLimit: 0
-  loadouts:
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen
-  - CheapSunnies
-  - AssistantNoirGlasses
-
-- type: loadoutGroup
   id: AssistantHead
   name: loadout-group-assistant-head
   minLimit: 0
@@ -445,6 +434,7 @@
   name: loadout-group-blueshield-eyewear
   loadouts:
   - BlueShieldGlasses
+  - BlueShieldGlassesPrescription
   - BlueShieldHud
   - BlueShieldEyePatchHud
 
@@ -995,6 +985,7 @@
 - type: loadoutGroup
   id: EliteSecurityMask
   name: loadout-group-security-mask-elite
+  minLimit: 0 # Gear - no forced masks
   loadouts:
     - MaskGasSecurity
     - BreathMaskMedicalSecurity
@@ -1004,6 +995,7 @@
 - type: loadoutGroup
   id: SecurityMask
   name: loadout-group-security-mask
+  minLimit: 0 # Gear - no forced masks
   loadouts:
     - MaskGasSecurity
     - BreathMaskMedicalSecurityBudget
@@ -1261,9 +1253,9 @@
   name: loadout-group-security-eyewear
   loadouts:
   - SecurityGlasses
+  - SecurityGlassesPrescription
   - SecurityHud
   - DetectiveNoirGlasses
-  - SecurityGlassesPrescription
 
 - type: loadoutGroup
   id: DetectiveLethal
@@ -1333,10 +1325,8 @@
   loadouts:
   - BrigmedicGlasses
   - BrigmedicHud
+  - BrigmedicGlassesPrescription
   - BrigmedicEyePatchHud
-  - BrigmeicGlassesPrescription
-  - CorpsmanGlasses
-  - CorpsmanHud
 
 - type: loadoutGroup
   id: BrigmedicBelt
@@ -1355,3 +1345,11 @@
   - MagistrateWhiteGloves
   - MagistrateBlackGloves
   - HopGloves
+
+- type: loadoutGroup
+  id: BartenderEyewear
+  name: loadout-group-bartender-eyewear
+  minLimit: 0
+  loadouts:
+  - BartenderBeerSunglasses
+  - BartenderBeerEyepatch

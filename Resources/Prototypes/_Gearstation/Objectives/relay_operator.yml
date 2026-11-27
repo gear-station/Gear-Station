@@ -1,0 +1,145 @@
+- type: entity
+  abstract: true
+  parent: [ BaseObjective, BaseFreeObjective ]
+  id: BaseRelayObjective
+  components:
+  - type: Objective
+    difficulty: 2
+    antag: null
+    issuer: objective-issuer-relay
+    unique: true
+    icon:
+      sprite: _Starlight/Interface/Misc/objective_icons.rsi
+      state: rp
+  - type: SocialObjective
+
+- type: entity
+  abstract: true
+  parent: BaseRelayObjective
+  id: BaseRelayDepartmentObjective
+  components:
+  - type: ObjectiveBlacklistRequirement
+    blacklist:
+      components:
+      - DepartmentObjective
+  - type: PickRandomDepartment
+
+- type: weightedRandom
+  id: RelayOperatorForcedObjectives
+  weights:
+    TelemarketObjective: 0.6
+    HateLetterObjective: 0.4
+
+- type: weightedRandom
+  id: RelayOperatorObjectiveGroup
+  weights:
+    PropagandaNanoObjective: 1
+    PropagandaSyndieObjective: 1
+    SurveyObjective: 1
+    PenpalObjective: 1
+    PhotographyObjective: 1
+
+- type: weightedRandom
+  id: RelayOperatorStoryObjectives
+  weights:
+    RelayPanicObjective: 1
+    RelayFalseUprisingObjective: 1
+    RelayFeudObjective: 1
+    RelayImpersonateObjective: 1
+    RelayFrameObjective: 1
+
+- type: entity
+  parent: BaseRelayObjective
+  id: TelemarketObjective
+  name: Telemarket
+  description: Advertise various corporation's products whenever possible.
+
+- type: entity
+  parent: BaseRelayObjective
+  id: HateLetterObjective
+  name: Get a hate letter
+  components:
+  - type: Objective
+    issuer: objective-issuer-nanotrasen
+
+- type: entity
+  parent: BaseRelayObjective
+  id: PropagandaNanoObjective
+  name: Distribute propaganda for NanoTrasen
+  description: Paint everyone else in a bad light.
+  components:
+  - type: Objective
+    issuer: objective-issuer-nanotrasen
+
+
+- type: entity
+  parent: BaseRelayObjective
+  id: PropagandaSyndieObjective
+  name: Distribute propaganda for the Syndicate
+  description: Paint everyone else in a bad light.
+  components:
+  - type: Objective
+    issuer: objective-issuer-syndicate
+
+- type: entity
+  parent: BaseRelayObjective
+  id: SurveyObjective
+  name: Conduct a survey
+  description: Send the results to whoever you want.
+  components:
+  - type: Objective
+    issuer: objective-issuer-personal
+
+- type: entity
+  parent: BaseRelayObjective
+  id: PenpalObjective
+  name: Find a new pen pal
+  description: Optionally stay anonymous.
+  components:
+  - type: Objective
+    issuer: objective-issuer-personal
+
+- type: entity
+  parent: BaseRelayObjective
+  id: PhotographyObjective
+  name: Share the beauty of your homeworld
+  description: Send pictures of the local flora and fauna
+  components:
+  - type: Objective
+    issuer: objective-issuer-ecology
+
+# syndie objectives
+- type: entity
+  parent: BaseRelayObjective
+  id: RelayPanicObjective
+  name: Convince the station of the existence of a threat that isn't, to your knowledge, present.
+
+
+# department objectives
+- type: entity
+  parent: BaseRelayDepartmentObjective
+  id: RelayFalseUprisingObjective
+  components:
+    - type: DepartmentObjective
+      title: objective-false-uprising
+
+- type: entity
+  parent: BaseRelayDepartmentObjective
+  id: RelayFeudObjective
+  components:
+    - type: DepartmentObjective
+      title: objective-feud
+
+- type: entity
+  parent: BaseRelayDepartmentObjective
+  id: RelayImpersonateObjective
+  components:
+    - type: DepartmentObjective
+      title: objective-impersonate
+
+- type: entity
+  parent: BaseRelayDepartmentObjective
+  id: RelayFrameObjective
+  components:
+    - type: DepartmentObjective
+      title: objective-framing

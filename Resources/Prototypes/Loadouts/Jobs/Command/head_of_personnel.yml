@@ -6,7 +6,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobHeadOfPersonnel
-      time: 20h
+      time: 9h # Gear-start - drip
 
 # Professional HoP Time
 - type: loadoutEffectGroup

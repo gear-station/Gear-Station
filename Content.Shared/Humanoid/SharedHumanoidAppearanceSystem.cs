@@ -22,7 +22,6 @@ using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 #region Starlight
-using Content.Shared._Starlight.TextToSpeech;
 using Content.Shared._Starlight.Actions.Components;
 #endregion
 
@@ -196,10 +195,6 @@ public abstract partial class SharedHumanoidAppearanceSystem : EntitySystem
         SetSex(target, sourceHumanoid.Sex, false, targetHumanoid);
         SetGender((target, targetHumanoid), sourceHumanoid.Gender);
 
-        // Starlight start
-        if (sourceHumanoid.Voice != null)
-            SetTTSVoice(target, sourceHumanoid.Voice, targetHumanoid);
-        // Starlight end
 
         Dirty(target, targetHumanoid);
 
@@ -547,7 +542,6 @@ public abstract partial class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         EnsureDefaultMarkings(uid, humanoid);
-        SetTTSVoice(uid, profile.Voice, humanoid);
 
         humanoid.Gender = profile.Gender;
         if (TryComp<GrammarComponent>(uid, out var grammar))
@@ -676,16 +670,6 @@ public abstract partial class SharedHumanoidAppearanceSystem : EntitySystem
 
         var ev = new MarkingsUpdateEvent(); //starlight
         RaiseLocalEvent(uid, ref ev); //starlight
-    }
-    //Starlight
-    public void SetTTSVoice(EntityUid uid, string voiceId, HumanoidAppearanceComponent humanoid)
-    {
-        if (!TryComp<TextToSpeechComponent>(uid, out var comp))
-            return;
-
-        humanoid.Voice = voiceId;
-        comp.VoicePrototypeId = voiceId;
-        Dirty(uid, comp);
     }
     /// <summary>
     /// Takes ID of the species prototype, returns UI-friendly name of the species.

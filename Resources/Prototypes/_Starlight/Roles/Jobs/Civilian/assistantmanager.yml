@@ -3,6 +3,7 @@
   name: job-name-assistantmanager
   description: job-description-assistantmanager
   playTimeTracker: JobAssistantManager
+  whitelisted: true # Gear - whitelist
   requirements:
   - !type:DepartmentTimeRequirement
     department: Command
@@ -10,8 +11,10 @@
   - !type:RoleTimeRequirement
     role: JobPassenger # How can you lead the masses if you've never been one of them?
     time: 30h
-  - !type:RolesRequirement
-    proto: ExtRolesReq
+  # Gear-start - whitelist
+  #- !type:RolesRequirement
+  #  proto: ExtRolesReq
+  # Gear-end - whitelist
   - !type:TraitsRequirement # I don't think I need to explain why these traits are restricted, but for the inevitable case someone asks...
     traits:
       - Iterator # Can't delegate tasks if nobody can understand you.

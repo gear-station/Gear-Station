@@ -7,7 +7,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
-      time: 60h
+      time: 9h # Gear-start - drip
 # Starlight End
 
 # Jumpsuit

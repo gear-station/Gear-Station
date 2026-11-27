@@ -1,0 +1,29 @@
+- type: entity
+  name: relay operator spawner
+  id: SpawnPointRelayOperator
+  parent: MarkerBase
+  components:
+  - type: SpawnPoint
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Structures/Machines/fax_machine.rsi
+      state: icon
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  id: RelayOperatorSpawner
+  parent: BaseAntagSpawner
+  components:
+  - type: GhostRole
+    name: ghost-role-information-relay-operator-name
+    description: ghost-role-information-relay-operator-information
+    rules: ghost-role-information-relay-operator-rules
+    important: true
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Structures/Machines/fax_machine.rsi
+      state: icon

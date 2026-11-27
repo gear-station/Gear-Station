@@ -15,7 +15,6 @@
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
   access:
-  - Cadet # Starlight
   - Security
   - Brig
   - Armory

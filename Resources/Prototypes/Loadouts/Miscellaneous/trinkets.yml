@@ -333,12 +333,14 @@
 
 - type: loadout
   id: Cane
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobLibrarian
-      time: 3600 # 1hr same as Jamjar.
+  # Gear-start - drip
+  #effects:
+  #- !type:JobRequirementLoadoutEffect
+  #  requirement:
+  #    !type:RoleTimeRequirement
+  #    role: JobLibrarian
+  #    time: 3600 # 1hr same as Jamjar.
+  # Gear-end - drip
   storage:
     back:
     - Cane

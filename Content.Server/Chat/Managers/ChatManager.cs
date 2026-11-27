@@ -310,12 +310,17 @@ internal sealed partial class ChatManager : IChatManager
         if(_playerRoles.TryGetPlayerData(player.UserId, out var playerData))
             playerTitle = playerData.Title ?? "";
 
-        if (_adminManager.HasAdminFlag(player, AdminFlags.NameColor))
+        // Gear-start - titles
+        var adminData = _adminManager.GetAdminData(player);
+        if (adminData != null)
         {
-            var prefs = _preferencesManager.GetPreferences(player.UserId);
-            colorOverride = prefs.AdminOOCColor;
-            messageColor = prefs.AdminOOCColor;
+            Color color = adminData.HasFlag(AdminFlags.NameColor) ? _preferencesManager.GetPreferences(player.UserId).AdminOOCColor : Color.LightSkyBlue;
+
+            playerTitle += $"[color={color.ToHex()}]{adminData.Title}[/color]";
+            colorOverride = color;
+            messageColor = color;
         }
+        // Gear-end - titles
 
         var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerTitle", playerTitle), ("nameColor", nameColor), ("messageColor", messageColor), ("playerName", playerName), ("message", FormattedMessage.EscapeText(message)));
 

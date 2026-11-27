@@ -4,7 +4,6 @@
   description: Components added / removed from an entity that gets inserted into an AI core.
   categories: [ HideSpawnMenu ]
   components:
-  - type: TextToSpeech
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
     channels:
@@ -58,6 +57,8 @@
         type: CommunicationsConsoleBoundUserInterface
       enum.RemoteControlUIKey.Key: # Starlight
         type: RemoteControlConsoleBoundUserInterface # Starlight
+      enum.RemoteControlSettingsUIKey.Key: # Starlight
+        type: RemoteControlSettingsBoundUserInterface # Starlight
   - type: IntrinsicUI
     uis:
       enum.RadarConsoleUiKey.Key:
@@ -92,6 +93,9 @@
   #region Starlight
   # Starlight: Shunt state lives on StationAiBrain so it survives core ejection.
   - type: RemoteControlConsole # Starlight
+    remoteControlPower: 21 # Starlight
+  - type: DeviceLinkSource # Starlight
+    ports: [ RemoteControl ] # Starlight
   #endregion Starlight
   - type: DamagedSiliconAccent
     startPowerCorruptionAtCharIdx: 4

@@ -1,0 +1,51 @@
+- type: !PartialOnly microwaveMealRecipe
+  id: RecipePancake
+  deviceType: Stove
+
+- type: !PartialOnly microwaveMealRecipe
+  id: RecipeBlueberryPancake
+  deviceType: Stove
+
+- type: !PartialOnly microwaveMealRecipe
+  id: RecipeMargheritaPizza
+  deviceType: Oven
+
+- type: !PartialOnly microwaveMealRecipe
+  id: RecipeMushroomPizza
+  deviceType: Oven
+
+- type: !PartialOnly microwaveMealRecipe
+  id: RecipeMeatPizza
+  deviceType: Oven
+
+- type: !PartialOnly microwaveMealRecipe
+  id: RecipeVegetablePizza
+  deviceType: Oven
+
+- type: !PartialOnly microwaveMealRecipe
+  id: RecipeHawaiianPizza
+  deviceType: Oven
+
+- type: !PartialOnly microwaveMealRecipe
+  id: RecipeDankPizza
+  deviceType: Oven
+
+- type: !PartialOnly microwaveMealRecipe
+  id: RecipeDonkpocketPizza
+  deviceType: Oven
+
+- type: !PartialOnly microwaveMealRecipe
+  id: RecipeUraniumPizza
+  deviceType: Oven
+
+- type: !PartialOnly microwaveMealRecipe
+  id: RecipeCottonPizza
+  deviceType: Oven
+
+- type: !PartialOnly microwaveMealRecipe
+  id: RecipeWorldpeasPizza
+  deviceType: Oven
+
+- type: !PartialOnly microwaveMealRecipe
+  id: RecipeWarmDonkpocketPizza
+  deviceType: Oven

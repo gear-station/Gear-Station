@@ -1,0 +1,95 @@
+Entries:
+- author: malyhob
+  changes:
+  - message: Added Gear changelog tab
+    type: Add
+  id: 1
+  time: '2026-11-23'
+- author: Saver310
+  changes:
+  - message: Added "grant deafed author fore" lobby art.
+    type: Add
+  id: 3401
+  time: '2026-11-22T15:46:19.000000+00:00'
+  url: https://github.com/gear-station/Gear-Station/pull/34
+- author: malyhob
+  changes:
+  - message: An unrecallable crew change shuttle is now called after 3 hours.
+    type: Add
+  id: 1201
+  time: '2026-11-14T17:49:04.000000+00:00'
+  url: https://github.com/gear-station/Gear-Station/pull/12
+- author: malyhob
+  changes:
+  - message: Added a temporary solution for discord changelogs.
+    type: Add
+  id: 3501
+  time: '2026-11-23T17:10:14.000000+00:00'
+  url: https://github.com/gear-station/Gear-Station/pull/35
+- author: Saver310
+  changes:
+  - message: Recolored Dr. Gibb to dark red instead of dark green.
+    type: Tweak
+  id: 3801
+  time: '2026-11-25T14:50:25.000000+00:00'
+  url: https://github.com/gear-station/Gear-Station/pull/38
+- author: malyhob
+  changes:
+  - message: Removed Event ghost themes.
+    type: Remove
+  - message: Changed the requirements for ghost themes.
+    type: Tweak
+  id: 3601
+  time: '2026-11-25T14:52:46.000000+00:00'
+  url: https://github.com/gear-station/Gear-Station/pull/36
+- author: malyhob
+  changes:
+  - message: Removed the ATS hijack objective.
+    type: Remove
+  id: 3701
+  time: '2026-11-25T14:53:29.000000+00:00'
+  url: https://github.com/gear-station/Gear-Station/pull/37
+- author: Saver310
+  changes:
+  - message: Added Dr. Gibb bottles.
+    type: Add
+  id: 4001
+  time: '2026-11-25T15:42:25.000000+00:00'
+  url: https://github.com/gear-station/Gear-Station/pull/40
+- author: Saver310
+  changes:
+  - message: Minor fill graphic fix for Dr. Gibb bottles.
+    type: Fix
+  id: 4101
+  time: '2026-11-26T09:49:53.000000+00:00'
+  url: https://github.com/gear-station/Gear-Station/pull/41
+- author: Saver310
+  changes:
+  - message: Added a new drink, "Ace of Spades".
+    type: Add
+  id: 4201
+  time: '2026-11-26T19:03:16.000000+00:00'
+  url: https://github.com/gear-station/Gear-Station/pull/42
+- author: Saver310
+  changes:
+  - message: Added Ry-Zeal metaplush.
+    type: Add
+  id: 4301
+  time: '2026-11-26T20:01:07.000000+00:00'
+  url: https://github.com/gear-station/Gear-Station/pull/43
+- author: malyhob
+  changes:
+  - message: The Psychic Screech gamerule is now quieter.
+    type: Tweak
+  id: 4501
+  time: '2026-11-27T14:23:58.000000+00:00'
+  url: https://github.com/gear-station/Gear-Station/pull/45
+- author: malyhob
+  changes:
+  - message: Traitor RP objectives now have a difficulty value.
+    type: Tweak
+  id: 4401
+  time: '2026-11-27T14:24:50.000000+00:00'
+  url: https://github.com/gear-station/Gear-Station/pull/44
+Order: -1
+

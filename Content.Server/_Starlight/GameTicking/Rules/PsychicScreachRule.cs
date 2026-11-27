@@ -22,6 +22,7 @@ using Content.Shared.Power.EntitySystems;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Station.Components;
 using Content.Shared.StatusEffectNew;
+using Robust.Shared.Audio;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -61,7 +62,8 @@ public sealed partial class PsychicScreachRule : StationEventSystem<PsychicScrea
                 return stationGrid.Station == stationEvent.TargetStation;
             });
 
-        Audio.PlayGlobal(comp.Scream, allPlayersOnStation, true);
+        var audioParams = AudioParams.Default.WithVolume(-5);
+        Audio.PlayGlobal(comp.Scream, allPlayersOnStation, true, audioParams);
         Audio.PlayGlobal(comp.Atmosphere1, allPlayersOnStation, true);
 
         // Comms are disabled directly by SolarFlareRule.

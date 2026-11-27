@@ -27,7 +27,6 @@ using Robust.Shared.Utility;
 using Content.Shared._Starlight.Radio;
 using Content.Shared._Starlight.Language.Components;
 using Content.Shared.Ghost;
-using Content.Server._Starlight.TextToSpeech;
 using Content.Shared._Starlight.Clothing;
 using Content.Shared.Popups;
 
@@ -112,7 +111,7 @@ public sealed partial class RadioSystem : EntitySystem
         bool escapeMarkup = true,
         HeadsetLoudModeComponent? loudComp = null) // Starlight
     {
-        SendRadioMessage(messageSource, message, _prototype.Index(channel), radioSource, escapeMarkup: escapeMarkup, language: language, suppressTTS: suppressTTS, loudComp: loudComp); // Starlight
+        SendRadioMessage(messageSource, message, _prototype.Index(channel), radioSource, escapeMarkup: escapeMarkup, language: language, loudComp: loudComp); // Starlight
     }
 
     /// <summary>
@@ -126,7 +125,6 @@ public sealed partial class RadioSystem : EntitySystem
         RadioChannelPrototype channel,
         EntityUid radioSource,
         LanguagePrototype? language = null, // Starlight
-        bool suppressTTS = false, // Starlight
         bool escapeMarkup = true,
         HeadsetLoudModeComponent? loudComp = null) // Starlight
     {
@@ -251,18 +249,6 @@ public sealed partial class RadioSystem : EntitySystem
                 RaiseLocalEvent(receiver, ref ev);
         }
 
-        // Starlight start
-        if (canSend)
-            RaiseLocalEvent(new RadioSpokeEvent
-            {
-                Channel = channel,
-                Source = messageSource,
-                Message = message,
-                Language = language,
-                SuppressTTS = suppressTTS,
-                Receivers = [.. ev.Receivers]
-            });
-        // Starlight end
 
         if (name != Name(messageSource))
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Radio message from {ToPrettyString(messageSource):user} as {name} on {channel.LocalizedName}: {message}");
@@ -366,9 +352,6 @@ public sealed partial class RadioSystem : EntitySystem
             RaiseLocalEvent(receiver, ref ev);
 
         }
-
-        // Do not add TTS here.
-        // No prototype, no TTS.
 
         if (name != Name(messageSource))
             _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Radio message from {ToPrettyString(messageSource):user} as {name} on {channel.LocalizedName}: {message}");

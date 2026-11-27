@@ -8,8 +8,11 @@
       state: ghost-bowmon
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: TesterReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Contributor
+    - Maintainer
+    - HM
   category: Tester
 
 - type: ghostTheme
@@ -22,8 +25,11 @@
       state: ghost-metroid
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: TesterReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Contributor
+    - Maintainer
+    - HM
   category: Tester
 
 - type: ghostTheme
@@ -36,8 +42,11 @@
       state: ghost-imp
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: TesterReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Contributor
+    - Maintainer
+    - HM
   category: Tester
 
 - type: ghostTheme
@@ -50,8 +59,11 @@
       state: ghost-revenant
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: TesterReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Contributor
+    - Maintainer
+    - HM
   category: Tester
 
 - type: ghostTheme
@@ -65,8 +77,11 @@
       state: ghost-ian
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: TesterReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Contributor
+    - Maintainer
+    - HM
   category: Tester
 
 - type: ghostTheme
@@ -80,8 +95,11 @@
       state: ghost-ian_cute
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: TesterReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Contributor
+    - Maintainer
+    - HM
   category: Tester
 
 - type: ghostTheme
@@ -95,8 +113,11 @@
       state: ghost-skeleton
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: TesterReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Contributor
+    - Maintainer
+    - HM
   category: Tester
 
 - type: ghostTheme
@@ -110,8 +131,11 @@
       state: ghost-sheet
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: TesterReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Contributor
+    - Maintainer
+    - HM
   category: Tester
 
 - type: ghostTheme
@@ -125,6 +149,9 @@
       state: ghost-cat
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: TesterReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Contributor
+    - Maintainer
+    - HM
   category: Tester

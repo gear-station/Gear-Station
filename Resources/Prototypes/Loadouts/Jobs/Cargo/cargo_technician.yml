@@ -10,13 +10,15 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobSalvageSpecialist
-      time: 21600 #6 hrs
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: Cargo
-      time: 216000 # 60 hrs
+      role: JobMiningSpecialist # Gear - drip
+      time: 10800 #3 hrs # Gear-start - drip
+  # Gear-start - drip
+  #- !type:JobRequirementLoadoutEffect
+  #  requirement:
+  #    !type:DepartmentTimeRequirement
+  #    department: Cargo
+  #    time: 216000 # 6 hrs
+  # Gear-end - drip
 
 # Head
 - type: loadout

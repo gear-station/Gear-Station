@@ -1,0 +1,13 @@
+- type: reaction
+  id: AceOfSpades
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    DrGibb:
+      amount: 1
+    Whiskey:
+      amount: 1
+    BlueCuracao:
+      amount: 1
+  products:
+    AceOfSpades: 3

@@ -8,8 +8,9 @@
       state: abomination
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: StaffRolesReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Any
   category: Staff
 
 - type: ghostTheme
@@ -23,8 +24,11 @@
       state: alive
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: StaffRolesReq
+  - !type:AdminTitleRequirement
+    titles:
+    - CM
+    - HM
+    - PM
   category: Staff
 
 - type: ghostTheme
@@ -38,8 +42,12 @@
       state: ghost-buff-rat-king
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: TicketsAdministratorReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Admin
+    - Headmin
+    - PM
+    - CM
   category: Staff
 
 - type: ghostTheme
@@ -53,8 +61,10 @@
       state: ghost-fox
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: TicketsAdministratorReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Eventmin
+    - CM
   category: Staff
 
 - type: ghostTheme
@@ -68,8 +78,9 @@
       state: ghost-lizard-plushie
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: TicketsAdministratorReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Any
   category: Staff
 
 - type: ghostTheme
@@ -83,8 +94,11 @@
       state: ghost-mothroach
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: TicketsAdministratorReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Contributor
+    - Maintainer
+    - HM
   category: Staff
 
 - type: ghostTheme
@@ -98,8 +112,9 @@
       state: ghost-scurret
     color: "#ffffff"
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: TicketsAdministratorReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Any
   category: Staff
 
 - type: ghostTheme
@@ -113,8 +128,10 @@
       state: wisp
       shader: unshaded
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: SeniorDeveloperReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Maintainer
+    - HM
   category: Staff
 
 - type: ghostTheme
@@ -127,6 +144,24 @@
       sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
       state: ghost-custodian
   requirements:
-  - !type:DiscordRolesRequirement
-    requirement: DeveloperReq
+  - !type:AdminTitleRequirement
+    titles:
+    - Maintainer
+    - HM
+  category: Staff
+
+- type: ghostTheme
+  id: ArchitectTheme
+  name: ghost-theme-architect-theme-name
+  description: ghost-theme-architect-theme-desc
+  colorizeable: true
+  spriteSpecifier:
+    sprite:
+      sprite: _Starlight/Mobs/Customization/GhostThemes/ghosts.rsi
+      state: ghost-architect
+  requirements:
+  - !type:AdminTitleRequirement
+    titles:
+    - Contributor
+    - Eventmin
   category: Staff

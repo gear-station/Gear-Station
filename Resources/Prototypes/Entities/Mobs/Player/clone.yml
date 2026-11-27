@@ -63,8 +63,6 @@
   - LanguageSpeaker
   - ForeignerTrait
   - XenosocializedTrait
-    # TTS - Starlight
-  - TextToSpeech
   eventComponents:
   - LanguageKnowledge #Clone languages via event so if they get changed you dont suddently re-learn languages.
   - Vocal # voice sounds

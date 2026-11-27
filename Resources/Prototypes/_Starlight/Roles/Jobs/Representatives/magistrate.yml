@@ -4,6 +4,7 @@
   name: job-name-magistrate
   description: job-description-magistrate
   playTimeTracker: JobMagistrate
+  whitelisted: true # Gear - whitelist
   requirements:
     - !type:DepartmentTimeRequirement
       department: Command
@@ -11,8 +12,10 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 36000 # 10h
-    - !type:RolesRequirement
-      proto: ExtRolesReq
+    # Gear-start - whitelist
+    #- !type:RolesRequirement
+    #  proto: ExtRolesReq
+    # Gear-end - whitelist
     - !type:TraitsRequirement
       traits:
         - Iterator
