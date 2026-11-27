@@ -84,5 +84,12 @@ Entries:
   id: 4501
   time: '2026-11-27T14:23:58.000000+00:00'
   url: https://github.com/gear-station/Gear-Station/pull/45
+- author: malyhob
+  changes:
+  - message: Traitor RP objectives now have a difficulty value.
+    type: Tweak
+  id: 4401
+  time: '2026-11-27T14:24:50.000000+00:00'
+  url: https://github.com/gear-station/Gear-Station/pull/44
 Order: -1
 
