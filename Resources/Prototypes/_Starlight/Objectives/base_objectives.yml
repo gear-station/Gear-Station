@@ -26,7 +26,7 @@
       components:
         - DieCondition
   - type: Objective
-    difficulty: 0
+    difficulty: 1
     antag: null # Story objectives shouldn't count, they're not completable
     unique: true
     icon:
